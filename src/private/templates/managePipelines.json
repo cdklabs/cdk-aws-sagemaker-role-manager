@@ -1,0 +1,59 @@
+{
+  "name": "SM_PipelineManagement",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreatePipeline",
+          "sagemaker:StartPipelineExecution",
+          "sagemaker:StopPipelineExecution",
+          "sagemaker:RetryPipelineExecution",
+          "sagemaker:UpdatePipelineExecution",
+          "sagemaker:SendPipelineExecutionStepSuccess",
+          "sagemaker:SendPipelineExecutionStepFailure",
+          "sagemaker:DescribePipeline",
+          "sagemaker:DescribePipelineExecution",
+          "sagemaker:DescribePipelineDefinitionForExecution",
+          "sagemaker:DeletePipeline"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListPipelines",
+          "sagemaker:ListPipelineExecutions",
+          "sagemaker:ListPipelineExecutionSteps",
+          "sagemaker:ListPipelineParametersForExecution"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "iam:PassRole",
+        "Resource": [
+          "[[PassRoles]]"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "sagemaker.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

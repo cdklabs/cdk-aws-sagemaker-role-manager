@@ -1,0 +1,42 @@
+{
+  "name": "SM_EndpointDeployment",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateEndpointConfig",
+          "sagemaker:CreateEndpoint",
+          "sagemaker:DeleteEndpointConfig",
+          "sagemaker:DeleteEndpoint",
+          "sagemaker:UpdateEndpoint",
+          "sagemaker:UpdateEndpointWeightsAndCapacities",
+          "sagemaker:DescribeEndpoint",
+          "sagemaker:DescribeEndpointConfig"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListEndpoints",
+          "sagemaker:ListEndpointConfigs"
+        ],
+        "Resource": "*"
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "SM_ModelMonitoring",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateMonitoringSchedule",
+          "sagemaker:UpdateMonitoringSchedule",
+          "sagemaker:DescribeMonitoringSchedule",
+          "sagemaker:DeleteMonitoringSchedule",
+          "sagemaker:StartMonitoringSchedule",
+          "sagemaker:StopMonitoringSchedule",
+          "sagemaker:CreateProcessingJob",
+          "sagemaker:DescribeProcessingJob",
+          "sagemaker:StopProcessingJob"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListMonitoringSchedules",
+          "sagemaker:ListProcessingJobs"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "iam:PassRole"
+        ],
+        "Resource": [
+          "[[PassRoles]]"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "sagemaker.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

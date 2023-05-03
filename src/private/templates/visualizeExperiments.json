@@ -1,0 +1,51 @@
+{
+  "name": "SM_ExperimentsVisualization",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:DescribeAction",
+          "sagemaker:DescribeArtifact",
+          "sagemaker:DescribeContext",
+          "sagemaker:DescribeExperiment",
+          "sagemaker:DescribeTrial",
+          "sagemaker:DescribeTrialComponent",
+          "sagemaker:DescribeLineageGroup"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListAssociations",
+          "sagemaker:ListActions",
+          "sagemaker:ListArtifacts",
+          "sagemaker:ListContexts",
+          "sagemaker:ListExperiments",
+          "sagemaker:ListTrials",
+          "sagemaker:ListTrialComponents",
+          "sagemaker:ListLineageGroups",
+          "sagemaker:GetLineageGroupPolicy",
+          "sagemaker:QueryLineage",
+          "sagemaker:Search",
+          "sagemaker:GetSearchSuggestions"
+        ],
+        "Resource": "*"
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

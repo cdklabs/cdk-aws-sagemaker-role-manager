@@ -1,0 +1,41 @@
+{
+  "name": "SM_AthenaQueryAccess",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "athena:GetQueryExecution",
+          "athena:GetQueryResults",
+          "athena:StartQueryExecution",
+          "athena:StopQueryExecution"
+        ],
+        "Resource": [
+          "arn:aws:athena:*:*:workgroup/[[WorkGroupNames]]"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "athena:ListDataCatalogs",
+          "athena:ListDatabases",
+          "athena:ListTableMetadata"
+        ],
+        "Resource": "*"
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

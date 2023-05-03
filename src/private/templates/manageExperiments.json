@@ -1,0 +1,48 @@
+{
+  "name": "SM_ExperimentsManagement",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:AddAssociation",
+          "sagemaker:CreateAction",
+          "sagemaker:CreateArtifact",
+          "sagemaker:CreateContext",
+          "sagemaker:CreateExperiment",
+          "sagemaker:CreateTrial",
+          "sagemaker:CreateTrialComponent",
+          "sagemaker:UpdateAction",
+          "sagemaker:UpdateArtifact",
+          "sagemaker:UpdateContext",
+          "sagemaker:UpdateExperiment",
+          "sagemaker:UpdateTrial",
+          "sagemaker:UpdateTrialComponent",
+          "sagemaker:AssociateTrialComponent",
+          "sagemaker:DisassociateTrialComponent",
+          "sagemaker:DeleteAssociation",
+          "sagemaker:DeleteAction",
+          "sagemaker:DeleteArtifact",
+          "sagemaker:DeleteContext",
+          "sagemaker:DeleteExperiment",
+          "sagemaker:DeleteTrial",
+          "sagemaker:DeleteTrialComponent"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "name": "SM_StudioAppPermissions",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateApp",
+          "sagemaker:CreateAppImageConfig",
+          "sagemaker:UpdateAppImageConfig",
+          "sagemaker:DeleteApp",
+          "sagemaker:DeleteAppImageConfig",
+          "sagemaker:DescribeApp",
+          "sagemaker:DescribeAppImageConfig",
+          "sagemaker:DescribeDomain",
+          "sagemaker:DescribeUserProfile"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListApps",
+          "sagemaker:ListAppImageConfigs",
+          "sagemaker:ListDomains",
+          "sagemaker:ListUserProfiles"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "iam:PassRole",
+        "Resource": [
+          "[[PassRoles]]"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "sagemaker.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

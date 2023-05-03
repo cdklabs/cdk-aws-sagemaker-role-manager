@@ -1,0 +1,58 @@
+{
+  "name": "SM_ModelManagement",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateModel",
+          "sagemaker:CreateModelPackage",
+          "sagemaker:CreateModelPackageGroup",
+          "sagemaker:DescribeModel",
+          "sagemaker:DescribeModelPackage",
+          "sagemaker:DescribeModelPackageGroup",
+          "sagemaker:BatchDescribeModelPackage",
+          "sagemaker:UpdateModelPackage",
+          "sagemaker:DeleteModel",
+          "sagemaker:DeleteModelPackage",
+          "sagemaker:DeleteModelPackageGroup"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListModels",
+          "sagemaker:ListModelPackages",
+          "sagemaker:ListModelPackageGroups"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "iam:PassRole",
+        "Resource": [
+          "[[PassRoles]]"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "sagemaker.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

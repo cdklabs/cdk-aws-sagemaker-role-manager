@@ -1,0 +1,68 @@
+{
+  "name": "SM_CommonJobManagement",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateTrainingJob",
+          "sagemaker:CreateTransformJob",
+          "sagemaker:CreateProcessingJob",
+          "sagemaker:CreateAutoMLJob",
+          "sagemaker:CreateHyperParameterTuningJob",
+          "sagemaker:StopTrainingJob",
+          "sagemaker:StopProcessingJob",
+          "sagemaker:StopAutoMLJob",
+          "sagemaker:StopHyperParameterTuningJob",
+          "sagemaker:DescribeTrainingJob",
+          "sagemaker:DescribeTransformJob",
+          "sagemaker:DescribeProcessingJob",
+          "sagemaker:DescribeAutoMLJob",
+          "sagemaker:DescribeHyperParameterTuningJob",
+          "sagemaker:UpdateTrainingJob",
+          "sagemaker:BatchGetMetrics"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:Search",
+          "sagemaker:ListTrainingJobs",
+          "sagemaker:ListTransformJobs",
+          "sagemaker:ListProcessingJobs",
+          "sagemaker:ListAutoMLJobs",
+          "sagemaker:ListCandidatesForAutoMLJob",
+          "sagemaker:ListHyperParameterTuningJobs",
+          "sagemaker:ListTrainingJobsForHyperParameterTuningJob"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "iam:PassRole",
+        "Resource": [
+          "[[PassRoles]]"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "sagemaker.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

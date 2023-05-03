@@ -1,0 +1,73 @@
+{
+  "name": "SM_GlueTableManagement",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "glue:SearchTables"
+        ],
+        "Resource": [
+          "arn:aws:glue:{{Region}}:{{AccountId}}:table/*/*",
+          "arn:aws:glue:{{Region}}:{{AccountId}}:database/[[GlueDbNames]]",
+          "arn:aws:glue:{{Region}}:{{AccountId}}:catalog"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:GetObject",
+          "s3:PutObject",
+          "s3:GetBucketAcl"
+        ],
+        "Resource": [
+          "arn:aws:s3:::[[S3Buckets]]/*"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:PutBucketAcl"
+        ],
+        "Resource": [
+          "arn:aws:s3:::[[S3Buckets]]/*"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "s3:x-amz-acl": "bucket-owner-full-control"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "glue:GetTable",
+          "glue:UpdateTable"
+        ],
+        "Resource": [
+          "arn:aws:glue:{{Region}}:{{AccountId}}:catalog",
+          "arn:aws:glue:{{Region}}:{{AccountId}}:database/sagemaker_featurestore",
+          "arn:aws:glue:{{Region}}:{{AccountId}}:table/sagemaker_featurestore/*"
+        ]
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole",
+        "Condition": {
+          "ArnLike": {
+            "aws:SourceArn": "arn:aws:sagemaker:{{Region}}:{{AccountId}}:*"
+          }
+        }
+      }
+    ]
+  }
+}

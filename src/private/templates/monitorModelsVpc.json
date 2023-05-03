@@ -1,0 +1,65 @@
+{
+  "name": "SM_ModelMonitoring_VPC",
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateMonitoringSchedule",
+          "sagemaker:UpdateMonitoringSchedule",
+          "sagemaker:CreateProcessingJob"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*",
+        "Condition": {
+          "ForAllValues:StringEquals": {
+            "sagemaker:VpcSubnets": [
+              "[[VpcSubnets]]"
+            ],
+            "sagemaker:VpcSecurityGroupIds": [
+              "[[VpcSecurityGroups]]"
+            ]
+          },
+          "Null": {
+            "sagemaker:VpcSubnets": "false",
+            "sagemaker:VpcSecurityGroupIds": "false"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListMonitoringSchedules",
+          "sagemaker:ListProcessingJobs"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "iam:PassRole"
+        ],
+        "Resource": [
+          "[[PassRoles]]"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "sagemaker.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}
