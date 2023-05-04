@@ -36,7 +36,6 @@ project.tasks.addTask('updateSnapshot', {
   exec: 'jest --passWithNoTests --updateSnapshot'
 })
 
-project.gitignore.exclude('.env', '.idea/**', '.github/**', '.DS_Store', '.mergify.yml', 'API.md', 'build',
-    'example/*.js', 'example/*.d.ts');
+project.gitignore.exclude('.env', '.idea/**', '.DS_Store', 'build');
 
 project.synth();
