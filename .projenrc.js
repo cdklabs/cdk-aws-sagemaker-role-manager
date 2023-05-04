@@ -13,16 +13,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
   devDeps: [
     'aws-sdk',
   ],
-  publishToMaven: {
-    javaPackage: 'io.github.cdklabs.cdk-aws-sagemaker-role-manager',
-    mavenGroupId: 'io.github.cdklabs',
-    mavenArtifactId: 'cdk-aws-sagemaker-role-manager',
-    mavenEndpoint: 'https://s01.oss.sonatype.org',
-  },
-  publishToPypi: {
-    distName: 'cdk-aws-sagemaker-role-manager',
-    module: 'cdk_aws_sagemaker_role_manager',
-  },
   packageName: 'cdk-aws-sagemaker-role-manager',
 });
 

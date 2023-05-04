@@ -2,7 +2,7 @@
   "name": "cdk-aws-sagemaker-role-manager",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npapasta/HawkeyeRoleManagerCDKConstructs.git"
+    "url": "https://github.com/cdklabs/cdk-aws-sagemaker-role-manager"
   },
   "scripts": {
     "build": "npx projen build",
@@ -16,9 +16,7 @@
     "eslint": "npx projen eslint",
     "package": "npx projen package",
     "package-all": "npx projen package-all",
-    "package:java": "npx projen package:java",
     "package:js": "npx projen package:js",
-    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -32,7 +30,7 @@
     "projen": "npx projen"
   },
   "author": {
-    "name": "npapasta",
+    "name": "Nikolas Papastavrou",
     "email": "npapasta@amazon.com",
     "organization": false
   },
@@ -114,19 +112,7 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {
-      "java": {
-        "package": "io.github.cdklabs.cdk-aws-sagemaker-role-manager",
-        "maven": {
-          "groupId": "io.github.cdklabs",
-          "artifactId": "cdk-aws-sagemaker-role-manager"
-        }
-      },
-      "python": {
-        "distName": "cdk-aws-sagemaker-role-manager",
-        "module": "cdk_aws_sagemaker_role_manager"
-      }
-    },
+    "targets": {},
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
