@@ -3371,8 +3371,19 @@
   },
   "schema": "jsii/0.10.0",
   "targets": {
+    "java": {
+      "maven": {
+        "artifactId": "cdk-aws-sagemaker-role-manager",
+        "groupId": "io.github.cdklabs"
+      },
+      "package": "io.github.cdklabs.aws.sagemaker.role.manager"
+    },
     "js": {
       "npm": "cdk-aws-sagemaker-role-manager"
+    },
+    "python": {
+      "distName": "cdk-aws-sagemaker-role-manager",
+      "module": "cdk_aws_sagemaker_role_manager"
     }
   },
   "types": {
@@ -5530,5 +5541,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "7+OonzBnZaDYT8yDt4ncak+8UGqensX7un3VyTIcK3g="
+  "fingerprint": "qCX1gplB3DgUPbRdGyWieSEI+D8ROuYjFocpyilsegY="
 }

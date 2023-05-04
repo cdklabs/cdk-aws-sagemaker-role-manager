@@ -7,7 +7,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^14",
+      "version": "^16",
       "type": "build"
     },
     {
@@ -35,10 +35,6 @@
       "type": "build"
     },
     {
-      "name": "eslint-config-prettier",
-      "type": "build"
-    },
-    {
       "name": "eslint-import-resolver-node",
       "type": "build"
     },
@@ -51,26 +47,18 @@
       "type": "build"
     },
     {
-      "name": "eslint-plugin-prettier",
-      "type": "build"
-    },
-    {
       "name": "eslint",
       "version": "^8",
       "type": "build"
     },
     {
       "name": "jest-junit",
-      "version": "^13",
+      "version": "^15",
       "type": "build"
     },
     {
       "name": "jest",
       "version": "^27",
-      "type": "build"
-    },
-    {
-      "name": "jsii",
       "type": "build"
     },
     {
@@ -86,12 +74,13 @@
       "type": "build"
     },
     {
-      "name": "npm-check-updates",
-      "version": "^16",
+      "name": "jsii",
+      "version": "1.x",
       "type": "build"
     },
     {
-      "name": "prettier",
+      "name": "npm-check-updates",
+      "version": "^16",
       "type": "build"
     },
     {

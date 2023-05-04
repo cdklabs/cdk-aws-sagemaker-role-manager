@@ -6,9 +6,18 @@ const project = new awscdk.AwsCdkConstructLibrary({
   defaultReleaseBranch: 'main',
   npmDistTag: 'latest',
   name: 'cdk-aws-sagemaker-role-manager',
-  description: 'Create roles and policies for ML Activities and ML Personas',
+  description: "Create roles and policies for ML Activities and ML Personas",
   repositoryUrl: 'https://github.com/cdklabs/cdk-aws-sagemaker-role-manager',
-
+  publishToPypi: {
+    distName: 'cdk-aws-sagemaker-role-manager',
+    module: 'cdk_aws_sagemaker_role_manager',
+  },
+  publishToMaven: {
+    mavenGroupId: 'io.github.cdklabs',
+    javaPackage: 'io.github.cdklabs.aws.sagemaker.role.manager',
+    mavenArtifactId: 'cdk-aws-sagemaker-role-manager',
+    mavenEndpoint: 'https://s01.oss.sonatype.org',
+  },
   peerDependencies: [
     'aws-cdk-lib',
   ],
@@ -16,23 +25,6 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'aws-sdk',
   ],
   packageName: 'cdk-aws-sagemaker-role-manager',
-
-  projenUpgradeSecret: 'PROJEN_GITHUB_TOKEN',
-  autoApproveOptions: {
-    allowedUsernames: ['cdklabs-automation', 'dontirun'],
-    secret: 'GITHUB_TOKEN',
-  },
-  autoApproveUpgrades: true,
-  depsUpgradeOptions: {
-    ignoreProjen: false,
-    workflowOptions: {
-      labels: ['auto-approve'],
-      secret: 'PROJEN_GITHUB_TOKEN',
-    },
-  },
-  eslintOptions: { prettier: true },
-  buildWorkflow: true,
-  release: true,
 });
 
 project.package.addField('prettier', {
@@ -40,7 +32,6 @@ project.package.addField('prettier', {
   semi: true,
   trailingComma: 'es5',
 });
-
 project.eslint.addRules({
   'prettier/prettier': [
     'error',
