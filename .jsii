@@ -3343,7 +3343,7 @@
       }
     }
   },
-  "description": "cdk-aws-sagemaker-role-manager",
+  "description": "Create roles and policies for ML Activities and ML Personas",
   "docs": {
     "stability": "stable"
   },
@@ -5530,5 +5530,5 @@
     }
   },
   "version": "0.0.0",
-  "fingerprint": "gl4bFQMcy78Gey67Dj77VDTJf/Qn8eOPlZlwwBgfkpk="
+  "fingerprint": "7+OonzBnZaDYT8yDt4ncak+8UGqensX7un3VyTIcK3g="
 }

@@ -1,5 +1,6 @@
 {
   "name": "cdk-aws-sagemaker-role-manager",
+  "description": "Create roles and policies for ML Activities and ML Personas",
   "repository": {
     "type": "git",
     "url": "https://github.com/cdklabs/cdk-aws-sagemaker-role-manager"
@@ -43,9 +44,11 @@
     "aws-sdk": "^2.1322.0",
     "constructs": "10.0.5",
     "eslint": "^8",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
     "jest": "^27",
     "jest-junit": "^13",
     "jsii": "^1.75.0",
@@ -53,6 +56,7 @@
     "jsii-docgen": "^7.1.7",
     "jsii-pacmak": "^1.75.0",
     "npm-check-updates": "^16",
+    "prettier": "^2.8.8",
     "projen": "^0.67.65",
     "standard-version": "^9",
     "ts-jest": "^27",
@@ -117,6 +121,11 @@
       "outDir": "lib",
       "rootDir": "src"
     }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "es5"
   },
   "resolutions": {
     "@types/prettier": "2.6.0",
