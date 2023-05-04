@@ -1,11 +1,11 @@
 const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkConstructLibrary({
-  author: 'npapasta',
+  author: 'Nikolas Papastavrou',
   authorAddress: 'npapasta@amazon.com',
   cdkVersion: '2.67.0',
   defaultReleaseBranch: 'main',
   name: 'cdk-aws-sagemaker-role-manager',
-  repositoryUrl: 'https://github.com/npapasta/HawkeyeRoleManagerCDKConstructs.git',
+  repositoryUrl: 'https://github.com/cdklabs/cdk-aws-sagemaker-role-manager',
 
   peerDependencies: [
     'aws-cdk-lib',
