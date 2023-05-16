@@ -22,7 +22,7 @@ const bucket = new s3.Bucket(stack, 's3Bucket', {
 const key = new kms.Key(stack, 'data key id', {});
 
 const repo = new ecr.Repository(stack, 'ecrRepository', {
-    repositoryName: 'test',
+    repositoryName: 'testrepository',
 });
 
 const role = util.createPassedRole(stack);

@@ -159,7 +159,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -432,7 +432,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -705,7 +705,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -978,7 +978,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -1251,7 +1251,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -1524,7 +1524,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -1797,7 +1797,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -2070,7 +2070,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -2343,7 +2343,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -2616,7 +2616,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -2889,7 +2889,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3162,7 +3162,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3435,7 +3435,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3708,7 +3708,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3981,7 +3981,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -4254,7 +4254,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -4527,7 +4527,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -4800,7 +4800,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -5073,7 +5073,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -5346,7 +5346,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -5619,7 +5619,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -5892,7 +5892,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6165,7 +6165,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6438,7 +6438,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6711,7 +6711,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6984,7 +6984,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -7257,7 +7257,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "test",
+        "RepositoryName": "testrepository",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
