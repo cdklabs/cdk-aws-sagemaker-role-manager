@@ -476,21 +476,21 @@ export class Activity extends Construct {
     // Set single value replacements
     this.singleValueReplacements = new Map<string, string>();
     this.singleValueReplacements.set(Activity.ACCOUNT_ID_PARAMETER_NAME,
-        cdk.Token.isUnresolved(cdk.Stack.of(this).account) ? '*' : cdk.Stack.of(this).account);
+      cdk.Token.isUnresolved(cdk.Stack.of(this).account) ? '*' : cdk.Stack.of(this).account);
     this.singleValueReplacements.set(Activity.REGION_PARAMETER_NAME,
-        cdk.Token.isUnresolved(cdk.Stack.of(this).region) ? '*' : cdk.Stack.of(this).region);
+      cdk.Token.isUnresolved(cdk.Stack.of(this).region) ? '*' : cdk.Stack.of(this).region);
 
     // Set multi value replacements
     this.multiValueReplacements = new Map<string, string[]>();
 
     this.multiValueReplacements.set(Activity.ATHENA_WORKGROUP_NAMES_PARAMETER_NAME, props.athenaWorkgroupNames ?? []);
     this.multiValueReplacements.set(Activity.ECR_REPOSITORIES_PARAMETER_NAME, (props.ecrRepositories ?? []).map(
-        (ecrRepository) => ecrRepository.repositoryArn));
+      (ecrRepository) => ecrRepository.repositoryArn));
     this.multiValueReplacements.set(Activity.GLUE_DATABASE_NAMES_PARAMETER_NAME, props.glueDatabaseNames ?? []);
     this.multiValueReplacements.set(Activity.PASSED_ROLES_PARAMETER_NAME, (props.rolesToPass ?? []).map(
-        (role) => role.roleArn));
+      (role) => role.roleArn));
     this.multiValueReplacements.set(Activity.S3_BUCKETS_PARAMETER_NAME, (props.s3Buckets ?? []).map(
-        (s3Bucket) => s3Bucket.bucketName));
+      (s3Bucket) => s3Bucket.bucketName));
 
     this.isCustomizationAvailableForVPC = props.isCustomizationAvailableForVPC;
     this.isCustomizationAvailableForKMS = props.isCustomizationAvailableForKMS;
@@ -596,7 +596,7 @@ export class Activity extends Construct {
 
     this.multiValueReplacements.set(Activity.SUBNETS_PARAMETER_NAME, subnets.map((subnet) => subnet.subnetId));
     this.multiValueReplacements.set(Activity.SECURITY_GROUPS_PARAMETER_NAME, securityGroups.map(
-        (securityGroup) => securityGroup.securityGroupId));
+      (securityGroup) => securityGroup.securityGroupId));
 
     this.isVPCCustomized = true;
   }

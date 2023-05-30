@@ -1,5 +1,6 @@
 {
-  "name": "SageMakerS3AllResourcesPolicyTemplateV2",
+  "name": "SageMakerS3AllResourcesPolicyTemplate",
+  "version": 2,
   "templateJson": {
     "Version": "2012-10-17",
     "Statement": [

@@ -59,11 +59,12 @@ export function replacePatterns(template: string, singleValueReplacements: Map<s
 /**
  * Return the template file of the activity with activityName
  * @param activityName - The name of the activity to return the template
+ * @param version - The version of the activity to return the template
  * @param isVPCCustomized - Whether VPC is customized
  * @param isKMSCustomized - Whether KMS is customized
  * @returns - The template file
  */
-export function getTemplateFile(activityName: string, isVPCCustomized: boolean = false, isKMSCustomized: boolean = false) {
+export function getTemplateFile(activityName: string, version: number, isVPCCustomized: boolean = false, isKMSCustomized: boolean = false) {
   // Get template name for activity taking into consideration vpc and kms customization
   let templateName = `${activityName}`;
   templateName = isVPCCustomized ? `${templateName}_VPC` : templateName;
@@ -73,7 +74,7 @@ export function getTemplateFile(activityName: string, isVPCCustomized: boolean =
 
   for (const fileName of fileNames) {
     const jsonFileContents = JSON.parse(fs.readFileSync(path.resolve(__dirname, `${TEMPLATES_DIR}/${fileName}`), 'utf8'));
-    if (jsonFileContents.name === templateName) {
+    if (jsonFileContents.name === templateName && jsonFileContents.version == version) {
       return jsonFileContents;
     }
   }

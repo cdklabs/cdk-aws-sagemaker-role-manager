@@ -1,5 +1,6 @@
 {
   "name": "SM_AthenaQueryAccess",
+  "version": 1,
   "templateJson": {
     "Version": "2012-10-17",
     "Statement": [

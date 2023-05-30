@@ -10,7 +10,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -98,7 +98,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -159,7 +159,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -283,7 +283,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -371,7 +371,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -432,7 +432,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -556,7 +556,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -644,7 +644,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -705,7 +705,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -829,7 +829,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -917,7 +917,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -978,7 +978,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -1102,7 +1102,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -1190,7 +1190,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -1251,7 +1251,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -1375,7 +1375,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -1463,7 +1463,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -1524,7 +1524,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -1648,7 +1648,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -1736,7 +1736,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -1797,7 +1797,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -1921,7 +1921,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -2009,7 +2009,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -2070,7 +2070,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -2194,7 +2194,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -2282,7 +2282,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -2343,7 +2343,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -2467,7 +2467,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -2555,7 +2555,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -2616,7 +2616,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -2740,7 +2740,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -2828,7 +2828,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -2889,7 +2889,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3013,7 +3013,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -3101,7 +3101,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -3162,7 +3162,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3286,7 +3286,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -3374,7 +3374,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -3435,7 +3435,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3559,7 +3559,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -3647,7 +3647,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -3708,7 +3708,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -3832,7 +3832,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -3920,7 +3920,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -3981,7 +3981,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -4105,7 +4105,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -4193,7 +4193,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -4254,7 +4254,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -4378,7 +4378,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -4466,7 +4466,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -4527,7 +4527,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -4651,7 +4651,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -4739,7 +4739,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -4800,7 +4800,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -4924,7 +4924,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -5012,7 +5012,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -5073,7 +5073,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -5197,7 +5197,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -5285,7 +5285,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -5346,7 +5346,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -5470,7 +5470,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -5558,7 +5558,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -5619,7 +5619,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -5743,7 +5743,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -5831,7 +5831,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -5892,7 +5892,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6016,7 +6016,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -6104,7 +6104,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -6165,7 +6165,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6289,7 +6289,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -6377,7 +6377,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -6438,7 +6438,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6562,7 +6562,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -6650,7 +6650,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -6711,7 +6711,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -6835,7 +6835,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -6923,7 +6923,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -6984,7 +6984,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",
@@ -7108,7 +7108,7 @@ Object {
     },
   },
   "Resources": Object {
-    "SMComputeExecutionRole1681344000000id171240DE": Object {
+    "SMComputeExecutionRoleV11681344000000id4FA730C9": Object {
       "Properties": Object {
         "PolicyDocument": Object {
           "Statement": Array [
@@ -7196,7 +7196,7 @@ Object {
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "SM_ComputeExecutionRole_1681344000000",
+        "PolicyName": "SM_ComputeExecutionRole_V1_1681344000000",
         "Roles": Array [
           Object {
             "Ref": "accessAwsServicesroleC21FCBB3",
@@ -7257,7 +7257,7 @@ Object {
     "ecrRepositoryF10F8231": Object {
       "DeletionPolicy": "Retain",
       "Properties": Object {
-        "RepositoryName": "testrepository",
+        "RepositoryName": "test",
       },
       "Type": "AWS::ECR::Repository",
       "UpdateReplacePolicy": "Retain",

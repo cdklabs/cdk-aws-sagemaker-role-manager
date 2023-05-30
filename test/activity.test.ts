@@ -229,7 +229,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
-      PolicyName: `SM_EndpointDeployment_${Date.now()}`,
+      PolicyName: `SM_EndpointDeployment_V1_${Date.now()}`,
     });
 
   });
@@ -275,7 +275,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
-      PolicyName: `SM_CommonJobManagement_VPC_${Date.now()}`,
+      PolicyName: `SM_CommonJobManagement_VPC_V1_${Date.now()}`,
     });
 
   });
@@ -323,7 +323,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
-      PolicyName: `SM_CommonJobManagement_KMS_${Date.now()}`,
+      PolicyName: `SM_CommonJobManagement_KMS_V1_${Date.now()}`,
     });
 
   });
@@ -380,7 +380,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
-      PolicyName: `SM_CommonJobManagement_VPC_KMS_${Date.now()}`,
+      PolicyName: `SM_CommonJobManagement_VPC_KMS_V1_${Date.now()}`,
     });
 
   });

@@ -767,6 +767,7 @@ Activity.visualizeExperiments(scope: Construct, id: string, options: VisualizeEx
 | --- | --- | --- |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.activityName">activityName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.version">version</a></code> | <code>number</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.isKMSCustomized">isKMSCustomized</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.isVPCCustomized">isVPCCustomized</a></code> | <code>boolean</code> | *No description.* |
 
@@ -791,6 +792,16 @@ public readonly activityName: string;
 ```
 
 - *Type:* string
+
+---
+
+##### `version`<sup>Required</sup> <a name="version" id="cdk-aws-sagemaker-role-manager.Activity.property.version"></a>
+
+```typescript
+public readonly version: number;
+```
+
+- *Type:* number
 
 ---
 
@@ -820,7 +831,6 @@ public readonly isVPCCustomized: boolean;
 | --- | --- | --- |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.ACCESS_AWS_SERVICES">ACCESS_AWS_SERVICES</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.ACCESS_S3_ALL_RESOURCES">ACCESS_S3_ALL_RESOURCES</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.ACCESS_S3_ALL_RESOURCES_V2">ACCESS_S3_ALL_RESOURCES_V2</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.ACCESS_S3_BUCKETS">ACCESS_S3_BUCKETS</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.ATHENA_WORKGROUP_NAMES_DEFAULT_VALUE">ATHENA_WORKGROUP_NAMES_DEFAULT_VALUE</a></code> | <code>string[]</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.MANAGE_ENDPOINTS_ACTIVITY_NAME">MANAGE_ENDPOINTS_ACTIVITY_NAME</a></code> | <code>string</code> | *No description.* |
@@ -832,7 +842,6 @@ public readonly isVPCCustomized: boolean;
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.MONITOR_MODELS_ACTIVITY_NAME">MONITOR_MODELS_ACTIVITY_NAME</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.QUERY_ATHENA_WORKGROUPS">QUERY_ATHENA_WORKGROUPS</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.RUN_STUDIO_APPS">RUN_STUDIO_APPS</a></code> | <code>string</code> | *No description.* |
-| <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.RUN_STUDIO_APPS_V2">RUN_STUDIO_APPS_V2</a></code> | <code>string</code> | *No description.* |
 | <code><a href="#cdk-aws-sagemaker-role-manager.Activity.property.VISUALIZE_EXPERIMENTS">VISUALIZE_EXPERIMENTS</a></code> | <code>string</code> | *No description.* |
 
 ---
@@ -851,16 +860,6 @@ public readonly ACCESS_AWS_SERVICES: string;
 
 ```typescript
 public readonly ACCESS_S3_ALL_RESOURCES: string;
-```
-
-- *Type:* string
-
----
-
-##### `ACCESS_S3_ALL_RESOURCES_V2`<sup>Required</sup> <a name="ACCESS_S3_ALL_RESOURCES_V2" id="cdk-aws-sagemaker-role-manager.Activity.property.ACCESS_S3_ALL_RESOURCES_V2"></a>
-
-```typescript
-public readonly ACCESS_S3_ALL_RESOURCES_V2: string;
 ```
 
 - *Type:* string
@@ -971,16 +970,6 @@ public readonly QUERY_ATHENA_WORKGROUPS: string;
 
 ```typescript
 public readonly RUN_STUDIO_APPS: string;
-```
-
-- *Type:* string
-
----
-
-##### `RUN_STUDIO_APPS_V2`<sup>Required</sup> <a name="RUN_STUDIO_APPS_V2" id="cdk-aws-sagemaker-role-manager.Activity.property.RUN_STUDIO_APPS_V2"></a>
-
-```typescript
-public readonly RUN_STUDIO_APPS_V2: string;
 ```
 
 - *Type:* string
@@ -1508,6 +1497,7 @@ const activityProps: ActivityProps = { ... }
 | <code><a href="#cdk-aws-sagemaker-role-manager.ActivityProps.property.glueDatabaseNames">glueDatabaseNames</a></code> | <code>string[]</code> | Names of the Glue Databases to give permissions to search tables. |
 | <code><a href="#cdk-aws-sagemaker-role-manager.ActivityProps.property.rolesToPass">rolesToPass</a></code> | <code>aws-cdk-lib.aws_iam.IRole[]</code> | Roles to allow passing as passed roles to actions. |
 | <code><a href="#cdk-aws-sagemaker-role-manager.ActivityProps.property.s3Buckets">s3Buckets</a></code> | <code>aws-cdk-lib.aws_s3.IBucket[]</code> | S3 Buckets to give read and write permissions. |
+| <code><a href="#cdk-aws-sagemaker-role-manager.ActivityProps.property.version">version</a></code> | <code>number</code> | Version of the SageMaker Activity. |
 
 ---
 
@@ -1613,6 +1603,22 @@ public readonly s3Buckets: IBucket[];
 - *Default:* none
 
 S3 Buckets to give read and write permissions.
+
+---
+
+##### `version`<sup>Optional</sup> <a name="version" id="cdk-aws-sagemaker-role-manager.ActivityProps.property.version"></a>
+
+```typescript
+public readonly version: number;
+```
+
+- *Type:* number
+- *Default:* 1
+
+Version of the SageMaker Activity.
+
+This version will be used to fetch the policy template that corresponds to the
+Activity.
 
 ---
 

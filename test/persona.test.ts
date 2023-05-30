@@ -273,7 +273,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
-      PolicyName: `SM_EndpointDeployment_${Date.now()}`,
+      PolicyName: `SM_EndpointDeployment_V1_${Date.now()}`,
     });
 
   });
@@ -308,17 +308,17 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson1,
-      PolicyName: `SM_EndpointDeployment_${Date.now()}`,
+      PolicyName: `SM_EndpointDeployment_V1_${Date.now()}`,
     });
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson2,
-      PolicyName: `SM_ExperimentsManagement_${Date.now()}`,
+      PolicyName: `SM_ExperimentsManagement_V1_${Date.now()}`,
     });
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson3,
-      PolicyName: `SM_ExperimentsVisualization_${Date.now()}`,
+      PolicyName: `SM_ExperimentsVisualization_V1_${Date.now()}`,
     });
 
   });
@@ -379,7 +379,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
-      PolicyName: `SM_CommonJobManagement_VPC_KMS_${Date.now()}`,
+      PolicyName: `SM_CommonJobManagement_VPC_KMS_V1_${Date.now()}`,
     });
 
   });
@@ -435,31 +435,31 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(runStudioAppsJson),
-      PolicyName: `SM_StudioAppPermissionsV2_${Date.now()}`,
+      PolicyName: `SM_StudioAppPermissions_V2_${Date.now()}`,
     });
 
     manageJobsTemplateJson.Statement[2].Resource = [{ 'Fn::GetAtt': ['passedroleid112F9904', 'Arn'] }];
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(manageJobsTemplateJson),
-      PolicyName: `SM_CommonJobManagement_${Date.now()}`,
+      PolicyName: `SM_CommonJobManagement_V1_${Date.now()}`,
     });
 
     manageModelsTemplateJson.Statement[2].Resource = { 'Fn::GetAtt': ['passedroleid112F9904', 'Arn'] };
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(manageModelsTemplateJson),
-      PolicyName: `SM_ModelManagement_${Date.now()}`,
+      PolicyName: `SM_ModelManagement_V1_${Date.now()}`,
     });
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(manageExperimentsTemplateJson),
-      PolicyName: `SM_ExperimentsManagement_${Date.now()}`,
+      PolicyName: `SM_ExperimentsManagement_V1_${Date.now()}`,
     });
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(visualizeExperimentsTemplateJson),
-      PolicyName: `SM_ExperimentsVisualization_${Date.now()}`,
+      PolicyName: `SM_ExperimentsVisualization_V1_${Date.now()}`,
     });
 
     accessS3BucketsJson.Statement[0].Resource = { 'Fn::Join': ['', ['arn:aws:s3:::', { Ref: 'bucketid95691A2E' }]] };
@@ -467,7 +467,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(accessS3BucketsJson),
-      PolicyName: `SageMakerS3BucketPolicyTemplate_${Date.now()}`,
+      PolicyName: `SageMakerS3BucketPolicyTemplate_V1_${Date.now()}`,
     });
   });
 
@@ -537,7 +537,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(runStudioAppsJson),
-      PolicyName: `SM_StudioAppPermissionsV2_${Date.now()}`,
+      PolicyName: `SM_StudioAppPermissions_V2_${Date.now()}`,
     });
 
     manageJobsTemplateJson.Statement[0].Condition['ForAllValues:StringEquals']['sagemaker:VpcSubnets'] = [{ Ref: 'subnetidSubnetEF5D338F' }];
@@ -549,7 +549,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(manageJobsTemplateJson),
-      PolicyName: `SM_CommonJobManagement_VPC_KMS_${Date.now()}`,
+      PolicyName: `SM_CommonJobManagement_VPC_KMS_V1_${Date.now()}`,
     });
 
     manageModelsTemplateJson.Statement[0].Condition['ForAllValues:StringEquals'] = {
@@ -569,17 +569,17 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(manageModelsTemplateJson),
-      PolicyName: `SM_ModelManagement_VPC_${Date.now()}`,
+      PolicyName: `SM_ModelManagement_VPC_V1_${Date.now()}`,
     });
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(manageExperimentsTemplateJson),
-      PolicyName: `SM_ExperimentsManagement_${Date.now()}`,
+      PolicyName: `SM_ExperimentsManagement_V1_${Date.now()}`,
     });
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(visualizeExperimentsTemplateJson),
-      PolicyName: `SM_ExperimentsVisualization_${Date.now()}`,
+      PolicyName: `SM_ExperimentsVisualization_V1_${Date.now()}`,
     });
 
     accessS3BucketsJson.Statement[0].Resource = { 'Fn::Join': ['', ['arn:aws:s3:::', { Ref: 'bucketid95691A2E' }]] };
@@ -587,7 +587,7 @@ describe('When creating a role', () => {
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: util.getFormattedTemplateJson(accessS3BucketsJson),
-      PolicyName: `SageMakerS3BucketPolicyTemplate_${Date.now()}`,
+      PolicyName: `SageMakerS3BucketPolicyTemplate_V1_${Date.now()}`,
     });
   });
 

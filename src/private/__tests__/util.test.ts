@@ -255,21 +255,21 @@ test('test replace patterns with missing multi value replacement', () => {
 });
 
 test('getTemplateFile with valid activity name', () => {
-  expect(getTemplateFile(manageJobsJson.name)).toEqual(manageJobsJson);
+  expect(getTemplateFile(manageJobsJson.name, 1)).toEqual(manageJobsJson);
 });
 
 test('getTemplateFile with valid activity name and vpc customization enabled', () => {
-  expect(getTemplateFile(manageJobsJson.name, true, false)).toEqual(manageJobsVpcJson);
+  expect(getTemplateFile(manageJobsJson.name, 1, true, false)).toEqual(manageJobsVpcJson);
 });
 
 test('getTemplateFile with valid activity name and kms customization enabled', () => {
-  expect(getTemplateFile(manageJobsJson.name, false, true)).toEqual(manageJobsKmsJson);
+  expect(getTemplateFile(manageJobsJson.name, 1, false, true)).toEqual(manageJobsKmsJson);
 });
 
 test('getTemplateFile with valid activity name and both vpc and kms customization enabled', () => {
-  expect(getTemplateFile(manageJobsJson.name, true, true)).toEqual(manageJobsVpcKmsJson);
+  expect(getTemplateFile(manageJobsJson.name, 1, true, true)).toEqual(manageJobsVpcKmsJson);
 });
 
 test('getTemplateFile with invalid activity name throws RangeError', () => {
-  expect(() => { getTemplateFile(''); }).toThrow(RangeError);
+  expect(() => { getTemplateFile('', 1); }).toThrow(RangeError);
 });

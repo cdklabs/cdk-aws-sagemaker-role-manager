@@ -1,5 +1,6 @@
 {
   "name": "SM_ModelManagement",
+  "version": 1,
   "templateJson": {
     "Version": "2012-10-17",
     "Statement": [
