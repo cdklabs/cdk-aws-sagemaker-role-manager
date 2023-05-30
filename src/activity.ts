@@ -20,6 +20,14 @@ export interface ActivityProps {
   readonly activityName: string;
 
   /**
+   * Version of the SageMaker Activity. This version will be used to fetch the policy template that corresponds to the
+   * Activity.
+   *
+   * @default - 1
+   */
+  readonly version?: number;
+
+  /**
    * ECR Repositories to give image pull permissions
    *
    * @default - none
@@ -140,7 +148,6 @@ export class Activity extends Construct {
   // Activity Default Names
   public static readonly ACCESS_AWS_SERVICES = 'SM_ComputeExecutionRole';
   public static readonly ACCESS_S3_ALL_RESOURCES = 'SageMakerS3AllResourcesPolicyTemplate';
-  public static readonly ACCESS_S3_ALL_RESOURCES_V2 = 'SageMakerS3AllResourcesPolicyTemplateV2';
   public static readonly ACCESS_S3_BUCKETS = 'SageMakerS3BucketPolicyTemplate';
   public static readonly MANAGE_ENDPOINTS_ACTIVITY_NAME = 'SM_EndpointDeployment';
   public static readonly MANAGE_EXPERIMENTS_ACTIVITY_NAME = 'SM_ExperimentsManagement';
@@ -151,7 +158,6 @@ export class Activity extends Construct {
   public static readonly MONITOR_MODELS_ACTIVITY_NAME = 'SM_ModelMonitoring';
   public static readonly QUERY_ATHENA_WORKGROUPS = 'SM_AthenaQueryAccess';
   public static readonly RUN_STUDIO_APPS = 'SM_StudioAppPermissions';
-  public static readonly RUN_STUDIO_APPS_V2 = 'SM_StudioAppPermissionsV2';
   public static readonly VISUALIZE_EXPERIMENTS = 'SM_ExperimentsVisualization';
 
   // Activity Default Parameter Values
@@ -191,7 +197,8 @@ export class Activity extends Construct {
   public static accessS3AllResourcesV2(scope: Construct, id: string, options: AccessS3AllResourcesV2Options): Activity {
 
     const activity = new Activity(scope, id, {
-      activityName: Activity.ACCESS_S3_ALL_RESOURCES_V2,
+      activityName: Activity.ACCESS_S3_ALL_RESOURCES,
+      version: 2,
       isCustomizationAvailableForVPC: false,
       isCustomizationAvailableForKMS: false,
     });
@@ -354,7 +361,8 @@ export class Activity extends Construct {
   public static runStudioAppsV2(scope: Construct, id: string, options: RunStudioAppsV2Options): Activity {
 
     const activity = new Activity(scope, id, {
-      activityName: Activity.RUN_STUDIO_APPS_V2,
+      activityName: Activity.RUN_STUDIO_APPS,
+      version: 2,
       isCustomizationAvailableForVPC: false,
       isCustomizationAvailableForKMS: false,
     });
@@ -413,40 +421,8 @@ export class Activity extends Construct {
     };
   }
 
-  /**
-   * Validate parameter values in listsOfParameterValues
-   * @param props properties of the activity
-   * @param listsOfParameterValues list of parameter value lists
-   * @param parameterKeys list of parameter keys
-   * @returns - void
-   */
-  private static validateActivityParameters(props: ActivityProps, listsOfParameterValues: any[],
-    parameterKeys: string[]): void {
-    for (let i = 0; i < listsOfParameterValues.length; i++) {
-      const parameterKey = parameterKeys[i];
-      const parameterValues = listsOfParameterValues[i];
-
-      if (!props.hasOwnProperty(parameterKey)) {
-        continue;
-      }
-
-      if (!parameterValues || parameterValues.length === 0) {
-        throw TypeError(`The array ${parameterKey} must be of type ${typeof parameterValues} with at least one element.`);
-      }
-
-      if (typeof parameterValues[0] === 'string') {
-        for (const parameterValue of parameterValues) {
-          if (!parameterValidationRegex.test(parameterValue)) {
-            throw TypeError(`The value ${parameterValue} of ${parameterKey} element contains an invalid character.
-            ${parameterKey} elements must be alphanumeric with no spaces and only the special characters: _/:.-`);
-          }
-        }
-      }
-
-    }
-  }
-
   public readonly activityName: string;
+  public readonly version: number;
 
   private readonly singleValueReplacements: Map<string, string>;
   private readonly multiValueReplacements: Map<string, string[]>;
@@ -459,43 +435,62 @@ export class Activity extends Construct {
   private constructor(scope: Construct, id: string, props: ActivityProps) {
     super(scope, id);
 
-    let listsOfParameterValues: any[] = [];
-    listsOfParameterValues.push(props.athenaWorkgroupNames);
-    listsOfParameterValues.push(props.ecrRepositories);
-    listsOfParameterValues.push(props.glueDatabaseNames);
-    listsOfParameterValues.push(props.rolesToPass);
-    listsOfParameterValues.push(props.s3Buckets);
+    // Validate passed values for multi value replacements
+    if (props.athenaWorkgroupNames && props.athenaWorkgroupNames.length === 0) {
+      throw TypeError(`The value of the athenaWorkgroupNames parameter should be of type ${props.athenaWorkgroupNames} with at least one element.`);
+    }
 
-    const parameterKeys = [
-      'athenaWorkgroupNames',
-      'ecrRepositories',
-      'glueDatabaseNames',
-      'rolesToPass',
-      's3Buckets',
-    ];
+    for (const athenaWorkGroupName of props.athenaWorkgroupNames || []) {
+      if (!parameterValidationRegex.test(athenaWorkGroupName)) {
+        throw TypeError(`The value ${athenaWorkGroupName} of athenaWorkgroupNames array element contains an invalid character,
+             athenaWorkgroupNames elements must be alphanumeric with no spaces and only the special characters: _/:.-`);
+      }
+    }
 
-    Activity.validateActivityParameters(props, listsOfParameterValues, parameterKeys);
+    if (props.ecrRepositories && props.ecrRepositories.length === 0) {
+      throw TypeError(`The value of the ecrRepositories parameter should be of type ${props.ecrRepositories} with at least one element.`);
+    }
+
+    if (props.glueDatabaseNames && props.glueDatabaseNames.length === 0) {
+      throw TypeError(`The value of the glueDatabaseNames parameter should be of type ${props.glueDatabaseNames} with at least one element.`);
+    }
+
+    for (const glueDatabaseName of props.glueDatabaseNames || []) {
+      if (!parameterValidationRegex.test(glueDatabaseName)) {
+        throw TypeError(`The value ${glueDatabaseName} of glueDatabaseNames array element contains an invalid character,
+             glueDatabaseNames elements must be alphanumeric with no spaces and only the special characters: _/:.-`);
+      }
+    }
+
+    if (props.rolesToPass && props.rolesToPass.length === 0) {
+      throw TypeError(`The value of the rolesToPass parameter should be of type ${props.rolesToPass} with at least one element.`);
+    }
+
+    if (props.s3Buckets && props.s3Buckets.length === 0) {
+      throw TypeError(`The value of the s3Buckets parameter should be of type ${props.s3Buckets} with at least one element.`);
+    }
 
     this.activityName = props.activityName;
+    this.version = props.version || 1;
 
     // Set single value replacements
     this.singleValueReplacements = new Map<string, string>();
     this.singleValueReplacements.set(Activity.ACCOUNT_ID_PARAMETER_NAME,
-      cdk.Token.isUnresolved(cdk.Stack.of(this).account) ? '*' : cdk.Stack.of(this).account);
+        cdk.Token.isUnresolved(cdk.Stack.of(this).account) ? '*' : cdk.Stack.of(this).account);
     this.singleValueReplacements.set(Activity.REGION_PARAMETER_NAME,
-      cdk.Token.isUnresolved(cdk.Stack.of(this).region) ? '*' : cdk.Stack.of(this).region);
+        cdk.Token.isUnresolved(cdk.Stack.of(this).region) ? '*' : cdk.Stack.of(this).region);
 
     // Set multi value replacements
     this.multiValueReplacements = new Map<string, string[]>();
 
     this.multiValueReplacements.set(Activity.ATHENA_WORKGROUP_NAMES_PARAMETER_NAME, props.athenaWorkgroupNames ?? []);
     this.multiValueReplacements.set(Activity.ECR_REPOSITORIES_PARAMETER_NAME, (props.ecrRepositories ?? []).map(
-      (ecrRepository) => ecrRepository.repositoryArn));
+        (ecrRepository) => ecrRepository.repositoryArn));
     this.multiValueReplacements.set(Activity.GLUE_DATABASE_NAMES_PARAMETER_NAME, props.glueDatabaseNames ?? []);
     this.multiValueReplacements.set(Activity.PASSED_ROLES_PARAMETER_NAME, (props.rolesToPass ?? []).map(
-      (role) => role.roleArn));
+        (role) => role.roleArn));
     this.multiValueReplacements.set(Activity.S3_BUCKETS_PARAMETER_NAME, (props.s3Buckets ?? []).map(
-      (s3Bucket) => s3Bucket.bucketName));
+        (s3Bucket) => s3Bucket.bucketName));
 
     this.isCustomizationAvailableForVPC = props.isCustomizationAvailableForVPC;
     this.isCustomizationAvailableForKMS = props.isCustomizationAvailableForKMS;
@@ -533,9 +528,9 @@ export class Activity extends Construct {
    * @returns - The policy that is created with the permissions of the activity
    */
   public createPolicy(scope: Construct): iam.Policy {
-    const templateFile = getTemplateFile(this.activityName, this.isVPCCustomized, this.isKMSCustomized);
+    const templateFile = getTemplateFile(this.activityName, this.version, this.isVPCCustomized, this.isKMSCustomized);
     const timestamp = Date.now().toString();
-    const templateName = `${templateFile.name}_${timestamp}`;
+    const templateName = `${templateFile.name}_V${this.version}_${timestamp}`;
     const templateAsString = JSON.stringify(templateFile.templateJson);
 
     // Replace singleValueReplacements and multiValueReplacements in templateDocument
@@ -554,7 +549,7 @@ export class Activity extends Construct {
    * @returns - The service principal of the ML Activity
    */
   public createPrincipal(): iam.ServicePrincipal {
-    const templateFile = getTemplateFile(this.activityName, this.isVPCCustomized, this.isKMSCustomized);
+    const templateFile = getTemplateFile(this.activityName, this.version, this.isVPCCustomized, this.isKMSCustomized);
     const templateAsString = JSON.stringify(templateFile.trustTemplateJson);
 
     // Replace singleValueReplacements and multiValueReplacements in templateDocument
@@ -572,7 +567,7 @@ export class Activity extends Construct {
    * @returns - The grant with the permissions granted to the identity
    */
   public grantPermissionsTo(identity: iam.IGrantable): iam.Grant {
-    const templateFile = getTemplateFile(this.activityName, this.isVPCCustomized, this.isKMSCustomized);
+    const templateFile = getTemplateFile(this.activityName, this.version, this.isVPCCustomized, this.isKMSCustomized);
     const templateAsString = JSON.stringify(templateFile.templateJson);
 
     // Replace singleValueReplacements and multiValueReplacements in templateDocument
@@ -601,7 +596,7 @@ export class Activity extends Construct {
 
     this.multiValueReplacements.set(Activity.SUBNETS_PARAMETER_NAME, subnets.map((subnet) => subnet.subnetId));
     this.multiValueReplacements.set(Activity.SECURITY_GROUPS_PARAMETER_NAME, securityGroups.map(
-      (securityGroup) => securityGroup.securityGroupId));
+        (securityGroup) => securityGroup.securityGroupId));
 
     this.isVPCCustomized = true;
   }
