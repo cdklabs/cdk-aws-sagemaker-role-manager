@@ -58,7 +58,7 @@ project.tasks.addTask('updateSnapshot', {
 project.gitignore.exclude('.env', '.idea/**', '.github/**', '.DS_Store', '.mergify.yml', 'API.md', 'build',
     'example/*.js', 'example/*.d.ts');
 
-project.gitignore.include('lib', 'conf/templates/*.json');
+project.gitignore.include('conf/templates/*.json');
 
 project.npmignore.include('conf/templates/*.json');
 

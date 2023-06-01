@@ -60,5 +60,4 @@ API.md
 build
 example/*.js
 example/*.d.ts
-!lib
 !conf/templates/*.json
