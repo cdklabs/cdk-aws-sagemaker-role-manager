@@ -241,7 +241,7 @@ Creates ML Activity service principal using ML Activity trust template.
 ##### `createRole` <a name="createRole" id="cdk-aws-sagemaker-role-manager.Activity.createRole"></a>
 
 ```typescript
-public createRole(scope: Construct, id: string, roleName: string, roleDescription?: string): IRole
+public createRole(scope: Construct, id: string, roleNameSuffix: string, roleDescription?: string): IRole
 ```
 
 Creates role with permissions of activity.
@@ -262,11 +262,11 @@ the resource id.
 
 ---
 
-###### `roleName`<sup>Required</sup> <a name="roleName" id="cdk-aws-sagemaker-role-manager.Activity.createRole.parameter.roleName"></a>
+###### `roleNameSuffix`<sup>Required</sup> <a name="roleNameSuffix" id="cdk-aws-sagemaker-role-manager.Activity.createRole.parameter.roleNameSuffix"></a>
 
 - *Type:* string
 
-the name of the role that will be created, if empty the role will have the name of the activity.
+the name suffix of the role that will be created, if empty the role will have the name of the activity.
 
 ---
 
@@ -1045,7 +1045,7 @@ Returns a string representation of this construct.
 ##### `createRole` <a name="createRole" id="cdk-aws-sagemaker-role-manager.Persona.createRole"></a>
 
 ```typescript
-public createRole(scope: Construct, id: string, roleName: string, roleDescription?: string): IRole
+public createRole(scope: Construct, id: string, roleNameSuffix: string, roleDescription?: string): IRole
 ```
 
 Creates role with permissions of persona.
@@ -1066,11 +1066,11 @@ the resource id.
 
 ---
 
-###### `roleName`<sup>Required</sup> <a name="roleName" id="cdk-aws-sagemaker-role-manager.Persona.createRole.parameter.roleName"></a>
+###### `roleNameSuffix`<sup>Required</sup> <a name="roleNameSuffix" id="cdk-aws-sagemaker-role-manager.Persona.createRole.parameter.roleNameSuffix"></a>
 
 - *Type:* string
 
-the name of the role that will be created, if empty the role will have the name of the activity.
+the name suffix of the role that will be created, if empty the role will have the name of the activity.
 
 ---
 

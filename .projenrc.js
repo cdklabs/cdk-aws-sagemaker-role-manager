@@ -2,7 +2,7 @@ const { awscdk } = require('projen');
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Nikolas Papastavrou',
   authorAddress: 'npapasta@amazon.com',
-  cdkVersion: '2.67.0',
+  cdkVersion: '2.81.0',
   defaultReleaseBranch: 'main',
   npmDistTag: 'latest',
   name: 'cdk-aws-sagemaker-role-manager',
@@ -25,6 +25,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'aws-sdk',
   ],
   packageName: 'cdk-aws-sagemaker-role-manager',
+
+  tsconfig: {
+    resolveJsonModule: true,
+  }
 });
 
 project.package.addField('prettier', {
@@ -32,6 +36,7 @@ project.package.addField('prettier', {
   semi: true,
   trailingComma: 'es5',
 });
+
 project.eslint.addRules({
   'prettier/prettier': [
     'error',
@@ -50,6 +55,11 @@ project.tasks.addTask('updateSnapshot', {
   exec: 'jest --passWithNoTests --updateSnapshot'
 })
 
-project.gitignore.exclude('.env', '.idea/**', '.DS_Store', 'build');
+project.gitignore.exclude('.env', '.idea/**', '.github/**', '.DS_Store', '.mergify.yml', 'API.md', 'build',
+    'example/*.js', 'example/*.d.ts');
+
+project.gitignore.include('lib', 'conf/templates/*.json');
+
+project.npmignore.include('conf/templates/*.json');
 
 project.synth();

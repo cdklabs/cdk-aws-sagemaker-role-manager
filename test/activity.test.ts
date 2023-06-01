@@ -159,7 +159,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     const manageGlueTableTemplate = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageGlueTables.json'), 'utf8'));
+      path.resolve(__dirname, '../conf/templates/manageGlueTables.json'), 'utf8'));
     const manageGlueTableTrustTemplate = manageGlueTableTemplate.trustTemplateJson;
 
     manageGlueTableTrustTemplate.Statement[0].Condition.ArnLike['aws:SourceArn'] = 'arn:aws:sagemaker:*:*:*';
@@ -198,7 +198,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     const manageGlueTableTemplate = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageGlueTables.json'), 'utf8'));
+      path.resolve(__dirname, '../conf/templates/manageGlueTables.json'), 'utf8'));
     const manageGlueTableTrustTemplate = manageGlueTableTemplate.trustTemplateJson;
 
     manageGlueTableTrustTemplate.Statement[0].Condition.ArnLike['aws:SourceArn'] =
@@ -225,7 +225,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     const templateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageEndpoints.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageEndpoints.json'), 'utf8')).templateJson;
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
@@ -261,7 +261,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     let templateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageJobsVpc.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageJobsVpc.json'), 'utf8')).templateJson;
 
     templateJson.Statement[0].Condition['ForAllValues:StringEquals']['sagemaker:VpcSubnets'] = [{ Ref: 'subnetidSubnetEF5D338F' }];
     templateJson.Statement[0].Condition['ForAllValues:StringEquals']['sagemaker:VpcSecurityGroupIds'] = [{ 'Fn::GetAtt': ['securitygroupid509A4AD0', 'GroupId'] }];
@@ -308,7 +308,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     let templateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageJobsKms.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageJobsKms.json'), 'utf8')).templateJson;
 
     templateJson.Statement[0].Condition.StringEquals['sagemaker:VolumeKmsKey'] = [{ Ref: 'volumekeyid59073B7E' }];
     templateJson.Statement[0].Condition.StringEquals['sagemaker:OutputKmsKey'] = [{ Ref: 'datakeyid00789BAD' }];
@@ -361,7 +361,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     let templateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageJobsVpcKms.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageJobsVpcKms.json'), 'utf8')).templateJson;
 
     templateJson.Statement[0].Condition['ForAllValues:StringEquals']['sagemaker:VpcSubnets'] = [{ Ref: 'subnetidSubnetEF5D338F' }];
     templateJson.Statement[0].Condition['ForAllValues:StringEquals']['sagemaker:VpcSecurityGroupIds'] = [{ 'Fn::GetAtt': ['securitygroupid509A4AD0', 'GroupId'] }];
@@ -407,7 +407,7 @@ describe('When granting permissions', () => {
 
   test('to a cdk construct, its principal is granted the activity\'s permissions', () => {
     // GIVEN
-    let activityTemplate = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/private/templates/manageEndpoints.json'), 'utf8'));
+    let activityTemplate = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../conf/templates/manageEndpoints.json'), 'utf8'));
 
     const stack = new cdk.Stack();
 

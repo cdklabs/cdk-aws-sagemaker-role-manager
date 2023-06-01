@@ -53,5 +53,12 @@ tsconfig.json
 !/API.md
 .env
 .idea/**
+.github/**
 .DS_Store
+.mergify.yml
+API.md
 build
+example/*.js
+example/*.d.ts
+!lib
+!conf/templates/*.json

@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-export const TEMPLATES_DIR = './templates';
+export const TEMPLATES_DIR = '../../conf/templates';
 
 export const parameterValidationRegex = /^[A-Za-z0-9\.\/:\-_]+$/;
 

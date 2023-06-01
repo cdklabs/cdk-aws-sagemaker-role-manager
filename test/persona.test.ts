@@ -269,7 +269,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     const templateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageEndpoints.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageEndpoints.json'), 'utf8')).templateJson;
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson,
@@ -300,11 +300,11 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 3);
 
     const templateJson1 = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageEndpoints.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageEndpoints.json'), 'utf8')).templateJson;
     const templateJson2 = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageExperiments.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageExperiments.json'), 'utf8')).templateJson;
     const templateJson3 = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/visualizeExperiments.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/visualizeExperiments.json'), 'utf8')).templateJson;
 
     template.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: templateJson1,
@@ -360,7 +360,7 @@ describe('When creating a role', () => {
     template.resourceCountIs('AWS::IAM::Policy', 1);
 
     let templateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageJobsVpcKms.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageJobsVpcKms.json'), 'utf8')).templateJson;
 
     templateJson.Statement[0].Condition['ForAllValues:StringEquals']['sagemaker:VpcSubnets'] = [{ Ref: 'subnetidSubnetEF5D338F' }];
     templateJson.Statement[0].Condition['ForAllValues:StringEquals']['sagemaker:VpcSecurityGroupIds'] = [{ 'Fn::GetAtt': ['securitygroupid509A4AD0', 'GroupId'] }];
@@ -414,17 +414,17 @@ describe('When creating a role', () => {
 
     // THEN
     let runStudioAppsJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/runStudioAppsV2.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/runStudioAppsV2.json'), 'utf8')).templateJson;
     let manageJobsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageJobs.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageJobs.json'), 'utf8')).templateJson;
     let manageModelsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageModels.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageModels.json'), 'utf8')).templateJson;
     let manageExperimentsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageExperiments.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageExperiments.json'), 'utf8')).templateJson;
     let visualizeExperimentsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/visualizeExperiments.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/visualizeExperiments.json'), 'utf8')).templateJson;
     let accessS3BucketsJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/accessS3Buckets.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/accessS3Buckets.json'), 'utf8')).templateJson;
 
     stack.resolve(passedRole.roleName);
 
@@ -512,17 +512,17 @@ describe('When creating a role', () => {
 
     // THEN
     let runStudioAppsJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/runStudioAppsV2.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/runStudioAppsV2.json'), 'utf8')).templateJson;
     let manageJobsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageJobsVpcKms.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageJobsVpcKms.json'), 'utf8')).templateJson;
     let manageModelsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageModelsVpc.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageModelsVpc.json'), 'utf8')).templateJson;
     let manageExperimentsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/manageExperiments.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/manageExperiments.json'), 'utf8')).templateJson;
     let visualizeExperimentsTemplateJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/visualizeExperiments.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/visualizeExperiments.json'), 'utf8')).templateJson;
     let accessS3BucketsJson = JSON.parse(fs.readFileSync(
-      path.resolve(__dirname, '../src/private/templates/accessS3Buckets.json'), 'utf8')).templateJson;
+      path.resolve(__dirname, '../conf/templates/accessS3Buckets.json'), 'utf8')).templateJson;
 
     stack.resolve(passedRole.roleName);
     stack.resolve(subnet.subnetId);
@@ -644,8 +644,8 @@ describe('When granting permissions', () => {
     persona.grantPermissionsTo(granteeRole);
 
     // THEN
-    let manageJobsTemplateJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/private/templates/manageJobs.json'), 'utf8')).templateJson;
-    let accessAwsServicesJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/private/templates/accessAWSServices.json'), 'utf8')).templateJson;
+    let manageJobsTemplateJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../conf/templates/manageJobs.json'), 'utf8')).templateJson;
+    let accessAwsServicesJson = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../conf/templates/accessAWSServices.json'), 'utf8')).templateJson;
 
     manageJobsTemplateJson.Statement = manageJobsTemplateJson.Statement.concat(accessAwsServicesJson.Statement);
 

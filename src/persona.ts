@@ -39,12 +39,12 @@ export class Persona extends Construct {
      * Creates role with permissions of persona
      * @param scope the Construct scope.
      * @param id the resource id.
-     * @param roleName the name of the role that will be created, if empty the role will have the name of the activity.
+     * @param roleNameSuffix the name suffix of the role that will be created, if empty the role will have the name of the activity.
      * @param roleDescription the description of the role that will be created.
      * @returns - The role that is created with the permissions of the persona
      */
-  public createRole(scope: Construct, id: string, roleName: string, roleDescription: string = ''): iam.IRole {
-    if (!roleName || !roleName.length) {
+  public createRole(scope: Construct, id: string, roleNameSuffix: string, roleDescription: string = ''): iam.IRole {
+    if (!roleNameSuffix || !roleNameSuffix.length) {
       throw TypeError('The role name should be a non empty string');
     }
 
@@ -55,7 +55,7 @@ export class Persona extends Construct {
     }
 
     const role = new iam.Role(scope, id, {
-      roleName: roleName,
+      roleName: `SageMaker-${roleNameSuffix}`,
       description: roleDescription,
       assumedBy: this.activities[0].createPrincipal(),
     });
