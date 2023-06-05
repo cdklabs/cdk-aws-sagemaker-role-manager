@@ -1,0 +1,93 @@
+{
+  "name": "SM_StudioAppPermissions_KMS",
+  "version": 1,
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateApp",
+          "sagemaker:CreateAppImageConfig",
+          "sagemaker:UpdateAppImageConfig",
+          "sagemaker:DeleteApp",
+          "sagemaker:DeleteAppImageConfig",
+          "sagemaker:DescribeApp",
+          "sagemaker:DescribeAppImageConfig",
+          "sagemaker:DescribeDomain",
+          "sagemaker:DescribeUserProfile"
+        ],
+        "Resource": "arn:aws:sagemaker:{{Region}}:{{AccountId}}:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListApps",
+          "sagemaker:ListAppImageConfigs",
+          "sagemaker:ListDomains",
+          "sagemaker:ListUserProfiles"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "kms:CreateGrant",
+        "Resource": [
+          "[[VolumeKmsKeys]]"
+        ],
+        "Condition": {
+          "Bool": {
+            "kms:GrantIsForAWSResource": "true"
+          },
+          "StringLike": {
+            "kms:ViaService": "sagemaker.{{Region}}.amazonaws.com"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": "kms:DescribeKey",
+        "Resource": [
+          "[[VolumeKmsKeys]]"
+        ],
+        "Condition": {
+          "StringLike": {
+            "kms:ViaService": "sagemaker.{{Region}}.amazonaws.com"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "kms:Decrypt",
+          "kms:GenerateDataKey"
+        ],
+        "Resource": [
+          "[[DataKmsKeys]]"
+        ],
+        "Condition": {
+          "StringLike": {
+            "kms:ViaService": "s3.{{Region}}.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole",
+        "Condition": {
+          "ArnLike": {
+            "aws:SourceArn": "arn:aws:sagemaker:{{Region}}:{{AccountId}}:*"
+          }
+        }
+      }
+    ]
+  }
+}
