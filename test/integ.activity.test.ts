@@ -358,6 +358,20 @@ test('integ test for runStudioApps ML Activity', () => {
   expect(template.toJSON()).toMatchSnapshot();
 });
 
+test('integ test for runStudioApps ML Activity with KMS', () => {
+  const activity = Activity.runStudioApps(stack, 'runStudioApps activity with KMS', {
+    rolesToPass: [role],
+    volumeKeys: [key],
+    dataKeys: [key],
+  });
+
+  activity.createRole(stack, 'runStudioApps role with KMS', 'runStudioApps role with KMS');
+
+  const template = assertions.Template.fromStack(stack);
+
+  expect(template.toJSON()).toMatchSnapshot();
+});
+
 test('integ test for runStudioAppsV2 ML Activity', () => {
   const activity = Activity.runStudioAppsV2(stack, 'runStudioAppsV2 activity', {});
 

@@ -348,7 +348,7 @@ export class Activity extends Construct {
     const activity = new Activity(scope, id, {
       activityName: Activity.RUN_STUDIO_APPS,
       isCustomizationAvailableForVPC: false,
-      isCustomizationAvailableForKMS: false,
+      isCustomizationAvailableForKMS: true,
       rolesToPass: options.rolesToPass,
     });
 
