@@ -47,7 +47,7 @@
     "@aws-cdk/integ-runner": "latest",
     "@aws-cdk/integ-tests-alpha": "latest",
     "@types/jest": "^27",
-    "@types/node": "^14",
+    "@types/node": "^16",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "2.83.0",
@@ -82,9 +82,6 @@
   "keywords": [
     "cdk"
   ],
-  "engines": {
-    "node": ">= 14.18.0"
-  },
   "main": "lib/index.js",
   "license": "Apache-2.0",
   "version": "0.0.0",
