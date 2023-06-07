@@ -1,8 +1,8 @@
 import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
 
 const project = new CdklabsConstructLibrary({
-  author: 'Amazon Web Services',
-  authorAddress: 'aws-cdk-dev@amazon.com',
+  author: 'Amazon Web Services SageMaker Hawkeye',
+  authorAddress: 'sagemaker-hawkeye@amazon.com',
   name: 'cdk-aws-sagemaker-role-manager',
   packageName: 'cdk-aws-sagemaker-role-manager',
   repositoryUrl: 'https://github.com/cdklabs/cdk-aws-sagemaker-role-manager',
