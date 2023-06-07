@@ -7,7 +7,7 @@
     },
     {
       "name": "@types/node",
-      "version": "^16",
+      "version": "^14",
       "type": "build"
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "2.67.0",
+      "version": "2.83.0",
       "type": "build"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "constructs",
-      "version": "10.0.5",
+      "version": "10.0.46",
       "type": "build"
     },
     {
@@ -131,12 +131,12 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.67.0",
+      "version": "^2.83.0",
       "type": "peer"
     },
     {
       "name": "constructs",
-      "version": "^10.0.5",
+      "version": "^10.0.46",
       "type": "peer"
     }
   ],
