@@ -1,0 +1,99 @@
+{
+  "name": "SM_ComputeExecutionRole_KMS",
+  "version": 1,
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:ListBucket"
+        ],
+        "Resource": [
+          "arn:aws:s3:::[[S3Buckets]]"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "s3:GetObject",
+          "s3:PutObject"
+        ],
+        "Resource": [
+          "arn:aws:s3:::[[S3Buckets]]/*"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:BatchPutMetrics",
+          "ecr:GetAuthorizationToken",
+          "ecr:ListImages"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "ecr:BatchCheckLayerAvailability",
+          "ecr:GetDownloadUrlForLayer",
+          "ecr:BatchGetImage"
+        ],
+        "Resource": [
+          "[[ECRRepoArns]]"
+        ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "kms:Decrypt",
+          "kms:GenerateDataKey"
+        ],
+        "Resource": [
+          "[[DataKmsKeys]]"
+        ],
+        "Condition": {
+          "StringLike": {
+            "kms:ViaService": "s3.*.amazonaws.com"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": "cloudwatch:PutMetricData",
+        "Resource": "*",
+        "Condition": {
+          "StringLike": {
+            "cloudwatch:namespace": [
+              "*SageMaker*",
+              "*Sagemaker*",
+              "*sagemaker*"
+            ]
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "logs:CreateLogStream",
+          "logs:PutLogEvents",
+          "logs:CreateLogGroup",
+          "logs:DescribeLogStreams"
+        ],
+        "Resource": "arn:aws:logs:*:*:log-group:/aws/sagemaker/*"
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

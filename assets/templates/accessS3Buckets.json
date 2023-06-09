@@ -1,0 +1,41 @@
+{
+  "name": "SageMakerS3BucketPolicyTemplate",
+  "version": 1,
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": [
+          "s3:ListBucket"
+        ],
+        "Effect": "Allow",
+        "Resource": [
+          "arn:aws:s3:::[[S3Buckets]]"
+        ]
+      },
+      {
+        "Action": [
+          "s3:GetObject",
+          "s3:PutObject",
+          "s3:DeleteObject"
+        ],
+        "Effect": "Allow",
+        "Resource": [
+          "arn:aws:s3:::[[S3Buckets]]/*"
+        ]
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}

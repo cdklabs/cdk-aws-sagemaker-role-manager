@@ -1,17 +1,35 @@
-import { CdklabsConstructLibrary } from "cdklabs-projen-project-types";
-const project = new CdklabsConstructLibrary({
-  author: "AWS",
-  authorAddress: "aws-cdk-dev@amazon.com",
-  cdkVersion: "2.1.0",
-  defaultReleaseBranch: "main",
-  devDeps: ["cdklabs-projen-project-types"],
-  name: "cdk-aws-sagemaker-role-manager",
-  projenrcTs: true,
-  release: false,
-  repositoryUrl: "https://github.com/cdklabs/cdk-aws-sagemaker-role-manager.git",
+import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // packageName: undefined,  /* The "name" in package.json. */
+const project = new CdklabsConstructLibrary({
+  author: 'Amazon Web Services SageMaker Hawkeye',
+  authorAddress: 'sagemaker-hawkeye@amazon.com',
+  name: 'cdk-aws-sagemaker-role-manager',
+  packageName: 'cdk-aws-sagemaker-role-manager',
+  repositoryUrl: 'https://github.com/cdklabs/cdk-aws-sagemaker-role-manager',
+  defaultReleaseBranch: "main",
+  description: "Create roles and policies for ML Activities and ML Personas",
+  cdkVersion: '2.83.0',
+  constructsVersion: '10.0.46',
+  minNodeVersion: '16.0.0',
+  workflowNodeVersion: '16.x',
+  setNodeEngineVersion: false,
+  devDeps: ['cdklabs-projen-project-types', 'aws-sdk', 'aws-cdk-lib'],
+  peerDeps: ['aws-cdk-lib'],
+  projenrcTs: true,
 });
+
+const testTask = project.tasks?.tryFind('test');
+testTask?.reset();
+testTask?.prependExec( "eslint");
+testTask?.prependExec("jest --passWithNoTests");
+testTask?.prependSay('Running tests that check for matching snapshots. To update snapshots, run npm run updateSnapshot');
+
+project.tasks?.addTask('updateSnapshot', {
+  exec: 'jest --passWithNoTests --updateSnapshot'
+})
+
+project.gitignore?.include('assets/templates/*.json');
+
+project.npmignore?.include('assets/templates/*.json');
+
 project.synth();

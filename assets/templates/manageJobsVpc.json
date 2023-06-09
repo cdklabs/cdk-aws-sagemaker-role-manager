@@ -1,0 +1,90 @@
+{
+  "name": "SM_CommonJobManagement_VPC",
+  "version": 1,
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateTrainingJob",
+          "sagemaker:CreateTransformJob",
+          "sagemaker:CreateProcessingJob",
+          "sagemaker:CreateAutoMLJob",
+          "sagemaker:CreateHyperParameterTuningJob"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*",
+        "Condition": {
+          "ForAllValues:StringEquals": {
+            "sagemaker:VpcSubnets": [
+              "[[VpcSubnets]]"
+            ],
+            "sagemaker:VpcSecurityGroupIds": [
+              "[[VpcSecurityGroups]]"
+            ]
+          },
+          "Null": {
+            "sagemaker:VpcSubnets": "false",
+            "sagemaker:VpcSecurityGroupIds": "false"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:StopTrainingJob",
+          "sagemaker:StopTransformJob",
+          "sagemaker:StopProcessingJob",
+          "sagemaker:StopAutoMLJob",
+          "sagemaker:StopHyperParameterTuningJob",
+          "sagemaker:DescribeTrainingJob",
+          "sagemaker:DescribeTransformJob",
+          "sagemaker:DescribeProcessingJob",
+          "sagemaker:DescribeAutoMLJob",
+          "sagemaker:DescribeHyperParameterTuningJob",
+          "sagemaker:UpdateTrainingJob",
+          "sagemaker:BatchGetMetrics"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:Search",
+          "sagemaker:ListTrainingJobs",
+          "sagemaker:ListTransformJobs",
+          "sagemaker:ListProcessingJobs",
+          "sagemaker:ListAutoMLJobs",
+          "sagemaker:ListCandidatesForAutoMLJob",
+          "sagemaker:ListHyperParameterTuningJobs",
+          "sagemaker:ListTrainingJobsForHyperParameterTuningJob"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": "iam:PassRole",
+        "Resource": [
+          "[[PassRoles]]"
+        ],
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "sagemaker.amazonaws.com"
+          }
+        }
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}
