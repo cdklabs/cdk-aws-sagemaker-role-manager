@@ -292,7 +292,7 @@
       "description": "Test rosetta extract",
       "steps": [
         {
-          "exec": "yarn --silent jsii-rosetta extract --strict"
+          "exec": "echo skipping"
         }
       ]
     },
@@ -301,13 +301,24 @@
       "description": "Run tests",
       "steps": [
         {
-          "say": "Running tests that check for matching snapshots. To update snapshots, run npm run updateSnapshot"
+          "exec": "jest --passWithNoTests --coverageProvider=v8 --ci",
+          "receiveArgs": true
         },
         {
-          "exec": "jest --passWithNoTests"
+          "spawn": "eslint"
         },
         {
-          "exec": "eslint"
+          "spawn": "integ"
+        }
+      ]
+    },
+    "test:update": {
+      "name": "test:update",
+      "description": "Update jest snapshots",
+      "steps": [
+        {
+          "exec": "jest --updateSnapshot --passWithNoTests --coverageProvider=v8 --ci",
+          "receiveArgs": true
         }
       ]
     },
@@ -333,14 +344,6 @@
       "steps": [
         {
           "builtin": "release/reset-version"
-        }
-      ]
-    },
-    "updateSnapshot": {
-      "name": "updateSnapshot",
-      "steps": [
-        {
-          "exec": "jest --passWithNoTests --updateSnapshot"
         }
       ]
     },

@@ -48,7 +48,7 @@ export class Persona extends Construct {
       throw TypeError('The role name should be a non empty string');
     }
 
-    const policies = [];
+    const policies: iam.Policy[] = [];
 
     for (const activity of this.activities) {
       policies.push(activity.createPolicy(scope));
