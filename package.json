@@ -1,5 +1,5 @@
 {
-  "name": "cdk-aws-sagemaker-role-manager",
+  "name": "@cdklabs/cdk-aws-sagemaker-role-manager",
   "description": "Create roles and policies for ML Activities and ML Personas",
   "repository": {
     "type": "git",
@@ -30,9 +30,9 @@
     "release": "npx projen release",
     "rosetta:extract": "npx projen rosetta:extract",
     "test": "npx projen test",
+    "test:update": "npx projen test:update",
     "test:watch": "npx projen test:watch",
     "unbump": "npx projen unbump",
-    "updateSnapshot": "npx projen updateSnapshot",
     "upgrade": "npx projen upgrade",
     "upgrade-cdklabs-projen-project-types": "npx projen upgrade-cdklabs-projen-project-types",
     "watch": "npx projen watch",
@@ -52,8 +52,8 @@
     "@typescript-eslint/parser": "^5",
     "aws-cdk-lib": "2.83.0",
     "aws-sdk": "^2.1395.0",
-    "cdklabs-projen-project-types": "^0.1.130",
-    "constructs": "10.0.46",
+    "cdklabs-projen-project-types": "^0.1.137",
+    "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.7",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -73,7 +73,7 @@
   },
   "peerDependencies": {
     "aws-cdk-lib": "^2.83.0",
-    "constructs": "^10.0.46"
+    "constructs": "^10.0.5"
   },
   "resolutions": {
     "@types/babel__traverse": "7.18.2",
@@ -131,19 +131,19 @@
     "outdir": "dist",
     "targets": {
       "java": {
-        "package": "io.github.cdklabs.cdk.aws.sagemaker.role.manager",
+        "package": "io.github.cdklabs.cdkawssagemakerrolemanager",
         "maven": {
           "groupId": "io.github.cdklabs",
           "artifactId": "cdk-aws-sagemaker-role-manager"
         }
       },
       "python": {
-        "distName": "cdk-aws-sagemaker-role-manager",
-        "module": "cdk_aws_sagemaker_role_manager"
+        "distName": "cdklabs.cdk-aws-sagemaker-role-manager",
+        "module": "cdklabs.cdk_aws_sagemaker_role_manager"
       },
       "dotnet": {
-        "namespace": "CdklabsCdkAwsSagemakerRoleManager",
-        "packageId": "CdklabsCdkAwsSagemakerRoleManager"
+        "namespace": "Cdklabs.CdkAwsSagemakerRoleManager",
+        "packageId": "Cdklabs.CdkAwsSagemakerRoleManager"
       },
       "go": {
         "moduleName": "github.com/cdklabs/cdk-aws-sagemaker-role-manager-go"

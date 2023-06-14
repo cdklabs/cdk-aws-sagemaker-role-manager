@@ -3,7 +3,8 @@
 ## Usage
 
 ### Create Role from ML Activity with VPC and KMS conditions
-```
+
+```ts
 import { App, Stack } from 'aws-cdk-lib';
 import { Activity } from 'cdk-aws-sagemaker-role-manager';
 
@@ -22,7 +23,8 @@ const role = activity.createRole(this, 'role id', 'Enter Name', 'Enter Descripti
 ```
 
 ### Create Role from ML Activity without VPC and KMS conditions
-```
+
+```ts
 import { App, Stack } from 'aws-cdk-lib';
 import { Activity } from 'cdk-aws-sagemaker-role-manager';
 
@@ -38,7 +40,8 @@ const role = activity.createRole(this, 'role id', 'Enter Name', 'Enter Descripti
 ```
 
 ### Create Role from Data Scientist ML Persona
-```
+
+```ts
 import { App, Stack } from 'aws-cdk-lib';
 import { Activity } from 'cdk-aws-sagemaker-role-manager';
 
@@ -67,7 +70,8 @@ const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Descriptio
 ```
 
 ### Create Role from Data Scientist ML Persona without vpc and kms global conditions
-```
+
+```ts
 import { App, Stack } from 'aws-cdk-lib';
 import { Activity } from 'cdk-aws-sagemaker-role-manager';
 
@@ -92,7 +96,8 @@ const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Descriptio
 ```
 
 ### Create Role MLOps ML Persona
-```
+
+```ts
 import { App, Stack } from 'aws-cdk-lib';
 import { Activity } from 'cdk-aws-sagemaker-role-manager';
 
@@ -120,7 +125,8 @@ const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Descriptio
 ```
 
 ### Create Role from MLOps ML Persona without vpc and kms global conditions
-```
+
+```ts
 import { App, Stack } from 'aws-cdk-lib';
 import { Activity } from 'cdk-aws-sagemaker-role-manager';
 
@@ -144,7 +150,8 @@ const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Descriptio
 ```
 
 ### Use created role to initialize notebook instance and/or user profile
-```
+
+```ts
 // Variable role has already been created through cdk
 // ...
 

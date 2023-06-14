@@ -4,8 +4,8 @@ import * as ecr from 'aws-cdk-lib/aws-ecr';
 import * as kms from 'aws-cdk-lib/aws-kms';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 
-import * as util from '../util';
 import { Activity } from '../../src';
+import * as util from '../util';
 
 const app = new cdk.App();
 const stack = new cdk.Stack(app, 'stack', {
