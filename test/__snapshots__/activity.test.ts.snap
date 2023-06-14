@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`integ test for accessAWSServices ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for accessAWSServices ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -273,7 +273,7 @@ Object {
 }
 `;
 
-exports[`integ test for accessAWSServices ML Activity with KMS 1`] = `
+exports[`verify roles match snapshosts integ test for accessAWSServices ML Activity with KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -546,7 +546,7 @@ Object {
 }
 `;
 
-exports[`integ test for accessAWSServices ML Activity with VPC 1`] = `
+exports[`verify roles match snapshosts integ test for accessAWSServices ML Activity with VPC 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -819,7 +819,7 @@ Object {
 }
 `;
 
-exports[`integ test for accessAWSServices ML Activity with VPC and KMS 1`] = `
+exports[`verify roles match snapshosts integ test for accessAWSServices ML Activity with VPC and KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -1092,7 +1092,7 @@ Object {
 }
 `;
 
-exports[`integ test for accessS3AllResources ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for accessS3AllResources ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -1365,7 +1365,7 @@ Object {
 }
 `;
 
-exports[`integ test for accessS3AllResourcesV2 ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for accessS3AllResourcesV2 ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -1638,7 +1638,7 @@ Object {
 }
 `;
 
-exports[`integ test for accessS3Buckets ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for accessS3Buckets ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -1911,7 +1911,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageEndpoints ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for manageEndpoints ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -2184,7 +2184,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageEndpoints ML Activity with KMS 1`] = `
+exports[`verify roles match snapshosts integ test for manageEndpoints ML Activity with KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -2457,7 +2457,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageExperiments ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for manageExperiments ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -2730,7 +2730,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageGlueTables ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for manageGlueTables ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -3003,7 +3003,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageGlueTables ML Activity with KMS 1`] = `
+exports[`verify roles match snapshosts integ test for manageGlueTables ML Activity with KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -3276,7 +3276,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageJobs ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for manageJobs ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -3549,7 +3549,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageJobs ML Activity with KMS 1`] = `
+exports[`verify roles match snapshosts integ test for manageJobs ML Activity with KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -3822,7 +3822,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageJobs ML Activity with VPC 1`] = `
+exports[`verify roles match snapshosts integ test for manageJobs ML Activity with VPC 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -4095,7 +4095,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageJobs ML Activity with VPC and KMS 1`] = `
+exports[`verify roles match snapshosts integ test for manageJobs ML Activity with VPC and KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -4368,7 +4368,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageModels ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for manageModels ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -4641,7 +4641,7 @@ Object {
 }
 `;
 
-exports[`integ test for manageModels ML Activity with VPC 1`] = `
+exports[`verify roles match snapshosts integ test for manageModels ML Activity with VPC 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -4914,7 +4914,7 @@ Object {
 }
 `;
 
-exports[`integ test for managePipelines ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for managePipelines ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -5187,7 +5187,7 @@ Object {
 }
 `;
 
-exports[`integ test for monitorModels ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for monitorModels ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -5460,7 +5460,7 @@ Object {
 }
 `;
 
-exports[`integ test for monitorModels ML Activity with KMS 1`] = `
+exports[`verify roles match snapshosts integ test for monitorModels ML Activity with KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -5733,7 +5733,7 @@ Object {
 }
 `;
 
-exports[`integ test for monitorModels ML Activity with VPC 1`] = `
+exports[`verify roles match snapshosts integ test for monitorModels ML Activity with VPC 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -6006,7 +6006,7 @@ Object {
 }
 `;
 
-exports[`integ test for monitorModels ML Activity with VPC and KMS 1`] = `
+exports[`verify roles match snapshosts integ test for monitorModels ML Activity with VPC and KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -6279,7 +6279,7 @@ Object {
 }
 `;
 
-exports[`integ test for queryAthenaGroups ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for queryAthenaGroups ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -6552,7 +6552,7 @@ Object {
 }
 `;
 
-exports[`integ test for runStudioApps ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for runStudioApps ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -6825,7 +6825,7 @@ Object {
 }
 `;
 
-exports[`integ test for runStudioApps ML Activity with KMS 1`] = `
+exports[`verify roles match snapshosts integ test for runStudioApps ML Activity with KMS 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -7098,7 +7098,7 @@ Object {
 }
 `;
 
-exports[`integ test for runStudioAppsV2 ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for runStudioAppsV2 ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
@@ -7371,7 +7371,7 @@ Object {
 }
 `;
 
-exports[`integ test for visualizeExperiments ML Activity 1`] = `
+exports[`verify roles match snapshosts integ test for visualizeExperiments ML Activity 1`] = `
 Object {
   "Parameters": Object {
     "BootstrapVersion": Object {
