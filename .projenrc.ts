@@ -1,17 +1,44 @@
-import { CdklabsConstructLibrary } from "cdklabs-projen-project-types";
-const project = new CdklabsConstructLibrary({
-  author: "AWS",
-  authorAddress: "aws-cdk-dev@amazon.com",
-  cdkVersion: "2.1.0",
-  defaultReleaseBranch: "main",
-  devDeps: ["cdklabs-projen-project-types"],
-  name: "cdk-aws-sagemaker-role-manager",
-  projenrcTs: true,
-  release: false,
-  repositoryUrl: "https://github.com/cdklabs/cdk-aws-sagemaker-role-manager.git",
+import { CdklabsConstructLibrary } from 'cdklabs-projen-project-types';
+import { UpdateSnapshot } from 'projen/lib/javascript';
 
-  // deps: [],                /* Runtime dependencies of this module. */
-  // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
-  // packageName: undefined,  /* The "name" in package.json. */
+const project = new CdklabsConstructLibrary({
+  author: 'Amazon Web Services',
+  authorAddress: 'sagemaker-hawkeye@amazon.com',
+  name: '@cdklabs/cdk-aws-sagemaker-role-manager',
+  repositoryUrl: 'https://github.com/cdklabs/cdk-aws-sagemaker-role-manager',
+  defaultReleaseBranch: 'main',
+  description: 'Create roles and policies for ML Activities and ML Personas',
+  cdkVersion: '2.83.0',
+  minNodeVersion: '16.14.0',
+  devDeps: ['cdklabs-projen-project-types', 'aws-sdk'],
+  projenrcTs: true,
+  jestOptions: {
+    updateSnapshot: UpdateSnapshot.NEVER,
+  },
+  publishToGo: {
+    moduleName: 'github.com/cdklabs/cdk-aws-sagemaker-role-manager-go',
+  },
+  publishToPypi: {
+    distName: 'cdklabs.cdk-aws-sagemaker-role-manager',
+    module: 'cdklabs.cdk_aws_sagemaker_role_manager',
+  },
+  publishToMaven: {
+    mavenGroupId: 'io.github.cdklabs',
+    javaPackage: 'io.github.cdklabs.cdkawssagemakerrolemanager',
+    mavenArtifactId: 'cdk-aws-sagemaker-role-manager',
+  },
+  publishToNuget: {
+    dotNetNamespace: 'Cdklabs.CdkAwsSagemakerRoleManager',
+    packageId: 'Cdklabs.CdkAwsSagemakerRoleManager',
+  },
 });
+
+project.gitignore?.include('assets/templates/*.json');
+
+project.npmignore?.include('assets/templates/*.json');
+
+// disable rossetta so that we can still use 'ts` in markdown without
+// deciphering why rosetta complains (for now)
+project.tasks.tryFind('rosetta:extract')?.reset('echo skipping');
+
 project.synth();

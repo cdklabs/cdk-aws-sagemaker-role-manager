@@ -1,0 +1,46 @@
+{
+  "name": "SM_StudioAppPermissions",
+  "version": 2,
+  "templateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:CreateApp",
+          "sagemaker:CreateAppImageConfig",
+          "sagemaker:UpdateAppImageConfig",
+          "sagemaker:DeleteApp",
+          "sagemaker:DeleteAppImageConfig",
+          "sagemaker:DescribeApp",
+          "sagemaker:DescribeAppImageConfig",
+          "sagemaker:DescribeDomain",
+          "sagemaker:DescribeUserProfile"
+        ],
+        "Resource": "arn:aws:sagemaker:*:*:*/*"
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "sagemaker:ListApps",
+          "sagemaker:ListAppImageConfigs",
+          "sagemaker:ListDomains",
+          "sagemaker:ListUserProfiles"
+        ],
+        "Resource": "*"
+      }
+    ]
+  },
+  "trustTemplateJson": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "Service": "sagemaker.amazonaws.com"
+        },
+        "Action": "sts:AssumeRole"
+      }
+    ]
+  }
+}
