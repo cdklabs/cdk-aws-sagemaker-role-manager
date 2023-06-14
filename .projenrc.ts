@@ -12,6 +12,7 @@ const project = new CdklabsConstructLibrary({
   minNodeVersion: '16.14.0',
   devDeps: ['cdklabs-projen-project-types', 'aws-sdk'],
   projenrcTs: true,
+  private: false,
   jestOptions: {
     updateSnapshot: UpdateSnapshot.NEVER,
   },
