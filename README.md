@@ -5,56 +5,50 @@
 ### Create Role from ML Activity with VPC and KMS conditions
 
 ```ts
-import { App, Stack } from 'aws-cdk-lib';
-import { Activity } from 'cdk-aws-sagemaker-role-manager';
+import { Stack } from 'aws-cdk-lib';
+import { Activity } from '@cdklabs/cdk-aws-sagemaker-role-manager';
 
-const app = new App();
-new Stack(app, 'CdkRoleManagerDemo');
+const stack = new Stack(app, 'CdkRoleManagerDemo');
 
-// Simple ML Activity Role Creation
-const activity = Activity.manageJobs(this, 'id1', {
-    rolesToPass: [new iam.Role('Enter Role Parameters')],
+const activity = Activity.manageJobs(stack, 'id1', {
+    rolesToPass: [iam.Role.fromRoleName('Enter Name')],
     subnets: [ec2.Subnet.fromSubnetId('Enter Id')],
     securityGroups: [ec2.SecurityGroup.fromSecurityGroupId('Enter Id')],
     dataKeys: [kms.Key.fromKeyArn('Enter Key Arn')],
     volumeKeys: [kms.Key.fromKeyArn('Enter Key Arn')],
 });
-const role = activity.createRole(this, 'role id', 'Enter Name', 'Enter Description');
+
+activity.createRole(stack, 'role id', 'Enter Name');
 ```
 
 ### Create Role from ML Activity without VPC and KMS conditions
 
 ```ts
-import { App, Stack } from 'aws-cdk-lib';
-import { Activity } from 'cdk-aws-sagemaker-role-manager';
+import { Stack } from 'aws-cdk-lib';
+import { Activity } from '@cdklabs/cdk-aws-sagemaker-role-manager';
 
-const app = new App();
-new Stack(app, 'CdkRoleManagerDemo');
+const stack = new Stack(app, 'CdkRoleManagerDemo');
 
-// Simple ML Activity Role Creation
 const activity = Activity.manageJobs(this, 'id1', {
-    rolesToPass: [new iam.Role('Enter Role Parameters')],
+    rolesToPass: [iam.Role.fromRoleName('Enter Name')],
 });
 
-const role = activity.createRole(this, 'role id', 'Enter Name', 'Enter Description');
+activity.createRole(this, 'role id', 'Enter Name', 'Enter Description');
 ```
 
 ### Create Role from Data Scientist ML Persona
 
 ```ts
-import { App, Stack } from 'aws-cdk-lib';
-import { Activity } from 'cdk-aws-sagemaker-role-manager';
+import { Stack } from 'aws-cdk-lib';
+import { Activity, Persona } from '@cdklabs/cdk-aws-sagemaker-role-manager';
 
-const app = new App();
-new Stack(app, 'CdkRoleManagerDemo');
+const stack = new Stack(app, 'CdkRoleManagerDemo');
 
-// Please see below how to create the Data Scientist ML Persona using its ML Activities.
-// You can update the following list with changes matching your usecase.
 let persona = new Persona(this, 'persona id', {
     activities: [
         Activity.useStudioApps(),
-        Activity.manageJobs(this, 'id1', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
-        Activity.manageModels(this, 'id2', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
+        Activity.manageJobs(this, 'id1', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
+        Activity.manageModels(this, 'id2', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
         Activity.manageExperiments(this, 'id3', {}),
         Activity.searchExperiments(this, 'id4', {}),
         Activity.accessBuckets(this, 'id5', {buckets: [s3.S3Bucket.fromBucketName('Enter Name')]})
@@ -65,26 +59,24 @@ let persona = new Persona(this, 'persona id', {
     volumeKeys: [kms.Key.fromKeyArn('Enter Key Arn')],
 });
 
-// We can create a role with Data Scientist persona permissions
-const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Description');
+persona.createRole(this, 'role id', 'Enter Name', 'Enter Description');
 ```
 
 ### Create Role from Data Scientist ML Persona without vpc and kms global conditions
 
 ```ts
-import { App, Stack } from 'aws-cdk-lib';
-import { Activity } from 'cdk-aws-sagemaker-role-manager';
+import { Stack } from 'aws-cdk-lib';
+import { Activity, Persona } from '@cdklabs/cdk-aws-sagemaker-role-manager';
 
-const app = new App();
-new Stack(app, 'CdkRoleManagerDemo');
+const stack = new Stack(app, 'CdkRoleManagerDemo');
 
 // Please see below how to create the Data Scientist ML Persona using its ML Activities.
 // You can update the following list with changes matching your usecase.
 let persona = new Persona(this, 'persona id', {
     activities: [
         Activity.useStudioApps(),
-        Activity.manageJobs(this, 'id1', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
-        Activity.manageModels(this, 'id2', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
+        Activity.manageJobs(this, 'id1', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
+        Activity.manageModels(this, 'id2', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
         Activity.manageExperiments(this, 'id3', {}),
         Activity.searchExperiments(this, 'id4', {}),
         Activity.accessBuckets(this, 'id5', {buckets: [s3.S3Bucket.fromBucketName('Enter Name')]})
@@ -98,20 +90,17 @@ const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Descriptio
 ### Create Role MLOps ML Persona
 
 ```ts
-import { App, Stack } from 'aws-cdk-lib';
-import { Activity } from 'cdk-aws-sagemaker-role-manager';
+import { Stack } from 'aws-cdk-lib';
+import { Activity, Persona } from '@cdklabs/cdk-aws-sagemaker-role-manager';
 
-const app = new App();
-new Stack(app, 'CdkRoleManagerDemo');
+const stack = new Stack(app, 'CdkRoleManagerDemo');
 
-// Please see below MLOps ML Activities.
-// You can update the following list with changes matching your usecase.
 let persona = new Persona(this, 'persona id', {
     activities: [
         Activity.useStudioApps(this, 'id1', {}),
-        Activity.manageModels(this, 'id2', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
-        Activity.manageEndpoints(this, 'id3',{rolesToPass: [new iam.Role('Enter Role Parameters')]}),
-        Activity.managePipelines(this, 'id4', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
+        Activity.manageModels(this, 'id2', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
+        Activity.manageEndpoints(this, 'id3',{rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
+        Activity.managePipelines(this, 'id4', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
         Activity.searchExperiments(this, 'id5', {})
     ],
     subnets: [ec2.Subnet.fromSubnetId('Enter Id')],
@@ -120,44 +109,28 @@ let persona = new Persona(this, 'persona id', {
     volumeKeys: [kms.Key.fromKeyArn('Enter Key Arn')],
 });
 
-// We can create a role with Data Scientist persona permissions
 const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Description');
 ```
 
 ### Create Role from MLOps ML Persona without vpc and kms global conditions
 
 ```ts
-import { App, Stack } from 'aws-cdk-lib';
-import { Activity } from 'cdk-aws-sagemaker-role-manager';
+import { Stack } from 'aws-cdk-lib';
+import { Activity, Persona } from '@cdklabs/cdk-aws-sagemaker-role-manager';
 
-const app = new App();
-new Stack(app, 'CdkRoleManagerDemo');
+const stack = new Stack(app, 'CdkRoleManagerDemo');
 
-// Please see below MLOps ML Activities.
-// You can update the following list with changes matching your usecase.
 let persona = new Persona(this, 'persona id', {
     activities: [
         Activity.useStudioApps(this, 'id1', {}),
-        Activity.manageModels(this, 'id2', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
-        Activity.manageEndpoints(this, 'id3',{rolesToPass: [new iam.Role('Enter Role Parameters')]}),
-        Activity.managePipelines(this, 'id4', {rolesToPass: [new iam.Role('Enter Role Parameters')]}),
+        Activity.manageModels(this, 'id2', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
+        Activity.manageEndpoints(this, 'id3',{rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
+        Activity.managePipelines(this, 'id4', {rolesToPass: [iam.Role.fromRoleName('Enter Name')]}),
         Activity.searchExperiments(this, 'id5', {})
     ],
 });
 
-// We can create a role with Data Scientist persona permissions
 const role = persona.createRole(this, 'role id', 'Enter Name', 'Enter Description');
-```
-
-### Use created role to initialize notebook instance and/or user profile
-
-```ts
-// Variable role has already been created through cdk
-// ...
-
-// Create a notebook instance and/or user profile with role
-let notebookInstance = new CfnNotebookInstance(this, 'nb', { RoleArn: role.RoleArn, ...});
-let userProfile = new CfnNUserProfile(this, 'up', { RoleName: role.RoleName, ... });
 ```
 
 ## Available ML Activities
@@ -185,4 +158,3 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This project is licensed under the Apache-2.0 License.
-
