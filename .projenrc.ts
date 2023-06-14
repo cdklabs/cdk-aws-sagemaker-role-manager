@@ -9,7 +9,7 @@ const project = new CdklabsConstructLibrary({
   defaultReleaseBranch: 'main',
   description: 'Create roles and policies for ML Activities and ML Personas',
   cdkVersion: '2.83.0',
-  minNodeVersion: '16.0.0',
+  minNodeVersion: '16.14.0',
   devDeps: ['cdklabs-projen-project-types', 'aws-sdk'],
   projenrcTs: true,
   jestOptions: {
