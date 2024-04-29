@@ -25,3 +25,4 @@ tsconfig.tsbuildinfo
 !assets/templates/*.json
 /.gitattributes
 /.projenrc.ts
+/projenrc
