@@ -3,7 +3,7 @@
   "description": "Create roles and policies for ML Activities and ML Personas",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdklabs/cdk-aws-sagemaker-role-manager.git"
+    "url": "https://github.com/cdklabs/cdk-aws-sagemaker-role-manager"
   },
   "scripts": {
     "build": "npx projen build",
@@ -47,16 +47,17 @@
   "devDependencies": {
     "@aws-cdk/integ-runner": "latest",
     "@aws-cdk/integ-tests-alpha": "latest",
+    "@stylistic/eslint-plugin": "^2",
     "@types/jest": "^27",
     "@types/node": "^16",
-    "@typescript-eslint/eslint-plugin": "^7",
-    "@typescript-eslint/parser": "^7",
+    "@typescript-eslint/eslint-plugin": "^8",
+    "@typescript-eslint/parser": "^8",
     "aws-cdk-lib": "2.83.0",
     "aws-sdk": "^2.1687.0",
-    "cdklabs-projen-project-types": "^0.1.200",
+    "cdklabs-projen-project-types": "^0.1.209",
     "commit-and-tag-version": "^12",
     "constructs": "10.0.5",
-    "eslint": "^8",
+    "eslint": "^9",
     "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-import": "^2.29.1",
     "jest": "^27",
@@ -66,7 +67,7 @@
     "jsii-docgen": "^10.5.0",
     "jsii-pacmak": "^1.103.1",
     "jsii-rosetta": "^5.5.4",
-    "projen": "^0.86.6",
+    "projen": "^0.90.2",
     "ts-jest": "^27",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2"
