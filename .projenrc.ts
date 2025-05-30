@@ -27,6 +27,7 @@ const project = new CdklabsConstructLibrary({
     mavenGroupId: 'io.github.cdklabs',
     javaPackage: 'io.github.cdklabs.cdkawssagemakerrolemanager',
     mavenArtifactId: 'cdk-aws-sagemaker-role-manager',
+    mavenServerId: 'central-ossrh',
   },
   publishToNuget: {
     dotNetNamespace: 'Cdklabs.CdkAwsSagemakerRoleManager',
