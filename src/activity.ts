@@ -526,8 +526,7 @@ export class Activity extends Construct {
    */
   public createPolicy(scope: Construct): iam.Policy {
     const templateFile = getTemplateFile(this.activityName, this.version, this.isVPCCustomized, this.isKMSCustomized);
-    const timestamp = Date.now().toString();
-    const templateName = `${templateFile.name}_V${this.version}_${timestamp}`;
+    const templateName = `${templateFile.name}_V${this.version}`;
     const templateAsString = JSON.stringify(templateFile.templateJson);
 
     // Replace singleValueReplacements and multiValueReplacements in templateDocument
