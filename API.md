@@ -4,6 +4,8 @@
 
 ### Activity <a name="Activity" id="@cdklabs/cdk-aws-sagemaker-role-manager.Activity"></a>
 
+- *Implements:* constructs.IConstruct, constructs.IDependable
+
 #### Methods <a name="Methods" id="Methods"></a>
 
 | **Name** | **Description** |
@@ -813,6 +815,8 @@ public readonly VISUALIZE_EXPERIMENTS: string;
 ---
 
 ### Persona <a name="Persona" id="@cdklabs/cdk-aws-sagemaker-role-manager.Persona"></a>
+
+- *Implements:* constructs.IConstruct, constructs.IDependable
 
 #### Initializers <a name="Initializers" id="@cdklabs/cdk-aws-sagemaker-role-manager.Persona.Initializer"></a>
 
